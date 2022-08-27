@@ -40,13 +40,18 @@ Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne proj
 
 <h2 class="movie">W1 - 2022-02-20</h2>
 
-## PPRZYKŁADOWY PROJEKT BEZ MVC
+## PRZYKŁADOWY PROJEKT BEZ MVC
 
 ### Znaczniki HTML w ASP.NET Core
 
 1. Dodaj nowy projekt `ASP.NET Core Web App`, pozostałe opcje domyślne
 2. Zmodyfikuj kod widoku `Index.cshtml` - treść strona startowa
    - Dodanie kilku znaczników HTML
+
+
+
+
+
 
 
 
