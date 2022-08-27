@@ -26,10 +26,34 @@
         <img src="docs/img/git.svg" width="40" height="40" alt="git"/>
         <img src="docs/img/github.svg" width="40" height="40" alt="github"/>
         <img src="docs/img/vs.svg" width="40" height="40" alt="visualstudio2022"/>
+        <img src="docs/img/reshaper.svg" width="40" height="40" alt="reshaper"/>
     </p>
 </div>
 <br>
 
-### DESCRIPTION
+## OPIS APLIKACJI
 
-Demonstration application of the online shop.
+Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne projekty aplikację dla klienta, część administracyjną oraz klasy bazodanowe.
+
+1. Kod z każdych zajęć oznaczony jest odpowiednimi tagami w Git
+2. Wszystkie kroki notowane są w pliku README.md
+
+<h2 class="movie">W1 - 2022-02-20</h2>
+
+## PPRZYKŁADOWY PROJEKT BEZ MVC
+
+### Znaczniki HTML w ASP.NET Core
+
+1. Dodaj nowy projekt `ASP.NET Core Web App`, pozostałe opcje domyślne
+2. Zmodyfikuj kod widoku `Index.cshtml` - treść strona startowa
+   - Dodanie kilku znaczników HTML
+
+
+
+
+<style>
+    .movie {
+        color:red;
+        margin: 50px 0 20px 0 !important;
+    }
+</style>
