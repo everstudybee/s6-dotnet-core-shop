@@ -48,7 +48,17 @@ Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne proj
 2. Zmodyfikuj kod widoku `Index.cshtml` - treść strona startowa
    - Dodanie kilku znaczników HTML
 
+### Dodawanie i Modyfikowanie styli CSS
 
+1. Dodaj nowy projekt `ASP.NET Core Web App`, pozostałe opcje domyślne
+2. Zmodyfikuj kod widoku `Index.cshtml` - treść strony startowej
+3. Style, js i dodatkowe biblioteki takie jak Bootstrap są w folderze `wwwroot`
+4. Plik `_Layout.schtml` odpowiada za szablon strony
+   - Znacznik `@RenderBody()` w treści pliku oznacza miejsce, gdzie będzie wklejana treść poszczególnych stron
+   - Odpowiednikiem `_Layout.cshtml` w aplikacjach desktopowych jest `generic.xaml`
+   - W `generic.xaml` odpowiednikiem `@RenderBody()` jest `<ContentPresenter>`
+   - Jeśli jest jeden layout to jest domyślny, jeśli jest więcej to można decydować, która strona korzysta z którego layoutu
+5. Zmodyfikuj plik `site.css` - który odpowiada za style CSS całego projektu
 
 
 

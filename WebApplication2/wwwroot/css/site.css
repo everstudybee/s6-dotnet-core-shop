@@ -1,0 +1,39 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.content-div {
+    height: 100px;
+}
+
+.left {
+    float: left;
+    width: 25%;
+    background-color: lightblue;
+}
+
+.welcome {
+    float: left;
+    width: 50%;
+}
+
+.right {
+    float: left;
+    background-color: lightblue;
+    width: 25%;
+}
