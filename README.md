@@ -116,7 +116,7 @@ feat: prepare a new solution with projects
    1. Nazwa aktywnego projektu będzie pogrubiona w Solution Explorer
 
 ### feat: zintegruj materializecss z Firma.PortalWWW
-feat: integrate materializecss with Firma.Portal WWW
+feat: integrate materializecss with Firma.PortalWWW
 
 1. Pobierz framework materializecss (link u góry w Dokumentacji)
 2. Ustaw projekt Firma.PortalWWW jako Startup Project
