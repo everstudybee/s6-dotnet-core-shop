@@ -31,6 +31,28 @@
 </div>
 <br>
 
+## Documentation
+
+### Git, versioning and tagging
+
+1. [Course Git [PL]](https://youtube.com/playlist?list=PLj-pbEqbjo6AKsJ8oE2pvIqsb15mxdrxs)
+2. [Conventional Commits - Nazewnictwo commit w Git](https://www.conventionalcommits.org/en/v1.0.0/)
+3. [Semantic Versioning - Numerowanie wersji](https://semver.org/)
+4. [Tagging - Git, Releases - GitHub](https://youtu.be/Wq_zrz7jV80)
+
+### Frameworks CSS
+
+1. [ASP.NET Core documentation page](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0)
+2. [Material Design - project website](https://material.io/)
+   1. [Material Design - Web Develop](https://material.io/develop/web)
+   2. [Mateerialize - CSS framework based on Material Design](https://materializecss.com/)
+3. [Bootstrap](https://getbootstrap.com/)
+4. [Material Design for Bootstrap v5 & v4](https://mdbootstrap.com/)
+5. [Pure.CSS - light CSS framework](https://purecss.io/)
+6. Frameworks overview
+   1. [9 Best CSS Frameworks in 2022](https://athemes.com/collections/best-css-frameworks/)
+   2. [20 Best Material Design CSS Frameworks for Websites](https://superdevresources.com/material-design-web-ui-frameworks/)
+
 ## OPIS APLIKACJI
 
 Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne projekty aplikację dla klienta, część administracyjną oraz klasy bazodanowe.
@@ -77,6 +99,31 @@ feat: create ASP.NET Core Web App MVC
    - `Views > Shared > _Layout.cshtml` - szablon domyślny dla wszystkich stron
    - `wwwroot > css > site.css` - główny plik styli CSS
    - `Controllers > HomeController.cs > funkcja Index()` - główny kontroler sterujący widokiem `Index.cshtml`
+
+<h2 class="movie">W2 - 2022-02-20</h2>
+
+## SOLUCJA OD POCZĄTKU. ROZWÓJ PRJEKTU Firma.PortalWWW
+
+### feat: przygotuj nowa solucje z projektami
+feat: prepare a new solution with projects
+
+1. Dodaj do projektu `Blank Solution` - solucja to zbiór projektów
+2. Dodaj nowy projekt `ASP.NET Core Web App (Model-VIew-Controller)` - nazwa `Firma.PortalWWW`
+   1. Projekt ten jest aplikacją internetową dedykowaną klientom
+3. Dodaj nowy projekt `ASP.NET Core Web App (Model-VIew-Controller)` - nazwa `Firma.Intranet`
+   1. Projekt ten jest aplikacją internetową dedykowaną pracownikom
+4. `PPM na Firma.Intranet > Set as Startup Project` - ustaw `Firma.Intranet` jako projekt startowy
+   1. Nazwa aktywnego projektu będzie pogrubiona w Solution Explorer
+
+### feat: zintegruj materializecss z Firma.PortalWWW
+feat: integrate materializecss with Firma.Portal WWW
+
+1. Pobierz framework materializecss (link u góry w Dokumentacji)
+2. Ustaw projekt Firma.PortalWWW jako Startup Project
+3. Przeciągnij rozpakowany folder `materialize` do `Firma.PortalWWW > wwwroot > lib`
+
+
+
 
 
 
