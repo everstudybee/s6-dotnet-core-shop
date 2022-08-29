@@ -43,12 +43,14 @@ Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne proj
 ## PRZYKŁADOWY PROJEKT BEZ MVC
 
 ### Znaczniki HTML w ASP.NET Core
+feat: play with razor and html tags
 
 1. Dodaj nowy projekt `ASP.NET Core Web App`, pozostałe opcje domyślne
 2. Zmodyfikuj kod widoku `Index.cshtml` - treść strona startowa
    - Dodanie kilku znaczników HTML
 
 ### Dodawanie i Modyfikowanie styli CSS
+feat: play with _Layout.cshtml, Index.cshtml and site.css
 
 1. Dodaj nowy projekt `ASP.NET Core Web App`, pozostałe opcje domyślne
 2. Zmodyfikuj kod widoku `Index.cshtml` - treść strony startowej
@@ -60,7 +62,21 @@ Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne proj
    - Jeśli jest jeden layout to jest domyślny, jeśli jest więcej to można decydować, która strona korzysta z którego layoutu
 5. Zmodyfikuj plik `site.css` - który odpowiada za style CSS całego projektu
 
+### Procedura tworzenia projektu zgodnie ze wzorcem MVC
+feat: create ASP.NET Core Web App MVC
 
+1. Model MVC to model projektowy `Model > View > Controller`
+   - `Model` zawiera klasy do zarządzania bazą danych oraz klasy logiki biznesowej
+   - `Widok` zawiera strony napisane w HTML raz z wstrzykiwanym kodem C#'owym i są renderowane za pomocą silnika `Razor`
+   - `Kontroler` zawiera klasy pośredniczące między modelem a widokiem
+   - We wzorcu projektowym MVVM jednemu View-Model odpowiadał jeden Widok. We wzorcu projektowym MVC jednemu Kontrolerowi odpowiada wiele Widoków
+   - Każdy Widok na ogół ma osobną funkcję w Kontrolerze. Jeden Kontroler działa na rzecz wielu widoków.
+2. Dodaj nowy projekt `ASP.NET Core Web App (Model-VIew-Controller)`, pozostałe opcje domyślne
+3. Główne elementy projektu `ASP.NET Core Web App (Model-VIew-Controller)`
+   - `Views > Home > Index.cshtml` - strona otwierająca się jako pierwsza
+   - `Views > Shared > _Layout.cshtml` - szablon domyślny dla wszystkich stron
+   - `wwwroot > css > site.css` - główny plik styli CSS
+   - `Controllers > HomeController.cs > funkcja Index()` - główny kontroler sterujący widokiem `Index.cshtml`
 
 
 
