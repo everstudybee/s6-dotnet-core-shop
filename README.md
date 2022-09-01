@@ -213,10 +213,25 @@ feat: add properties and annotations to strona.cs in Firma.Intranet project
    2. `[Required]` - oznacza, że pole jest wymagane
       - `[Required(ErrorMessage = "Wpisz tytuł donośnika")]` - komunikat błędu, w domyślnym szablonie wyświetla się pod danym elementem w formularzu
    3. `[MaxLength]` - maksymalna długość pola
-      - `[MaxLength(10, ErrorMessage = "Tytuł powinien zawierać max. 10 znaków")]` - weryfikuje, czy wpisany tekst nie jest dłuższy niż 10 znaków i ewentualnie wyświetla odpowiedni komunikat
+      - `[MaxLength(10, ErrorMessage = "Tytuł powinien zawierać max. 10 znaków")]` - weryfikuje, czy wpisany tekst nie jest dłuższy niż 10 znaków i ewentualnie wyświetla odpowiedni komunikat. **To pole jest ważne w menu, by tekst zawsze się mieścił lub w tytułach**
    4. `[Display]` - podczas wyświetlania zamienia nazwę properties na podany string. Nazwa properties jest taka sama jak nazwa kolumny w bazie danych i nie powinna zawierać polskich znaków. Używamy gdy nazwa pola jest inna niż wyświetlana
       - `[Display(Name = "Tytuł odnośnika")]` - podany string zamienia nazwę properties
    5. `[Column]` - decydujemy, że w bazie danych ten properties będzie typu nvarchar(MAX)
+
+
+
+<h2 class="movie">W3 - 2022-03-06</h2>
+
+### feat: dodaj klasy Aktualnosc.cs oraz Parametr.cs
+feat: add classes Aktualnosc.cs and Parametr.cs
+
+1. Klasy tworzymy analogicznie do klasy Strona.cs
+2. Tabela parametry będzie służyła do przechowywania pojedynczych tekstów na danej stronie
+3. W projekcie może być kilka tabel z parametrami np. parametry ogólne, parametry finansowe i w każdym module aplikacji może być oddzielna tabela. Każdy projekt może mieć wtedy oddzielną tabelę parametry + parametry ogólne np. z nazwą firmy, adresem itd, które dotyczą całej aplikacji.
+4. Innym sposobem podejścia może być jedna tabela parametry z dodatkowym polem, gdzie dodamy informacje, gdzie ten parametr zostanie wykorzystany.
+5. Na koniec kompilujemy projekt.
+
+
 
 
 

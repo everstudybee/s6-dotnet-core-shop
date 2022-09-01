@@ -27,6 +27,7 @@ namespace Firma.Intranet.Models.CMS
         public int Pozycja { get; set; }
 
         // Pola dodatkowe, które powinny być w każdym projekcie
+        // Te pola mogą być dziedziczone, ponieważ każda tabela je zawiera
         // Można to zrobić na zasadzie dziedziczenia z klasy Record
         //    - Kto dodał
         //    - Kiedy dodał
