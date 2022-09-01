@@ -138,6 +138,14 @@ feat: connect materializcsse to _Layout.cshtml and update libraries
 4. Usuń nieużywane przez template skrypty z `Firma.PortalWWW > wwwroot > lib`
     1. Bootstrap
 
+### feat: dodaj linki do menu w _Layout.cshtml
+feat: add links to the menu in _Layout.cshtml
+
+1. Tworzenie linku do strony `@Html.ActionLink("Prywatność","Privacy","Home")`
+   1. `Prywatność` - anchor text `linkText`
+   2. `Privacy` - nazwa funkcji wyświetlającej daną stronę w kontrolerze `actionName`
+   3. `Home` - nazwa kontrolera `controllerName`
+
 
 
 
