@@ -53,6 +53,15 @@
    1. [9 Best CSS Frameworks in 2022](https://athemes.com/collections/best-css-frameworks/)
    2. [20 Best Material Design CSS Frameworks for Websites](https://superdevresources.com/material-design-web-ui-frameworks/)
 
+### Code-first
+
+Podejście do tworzenia bazy danych
+
+1. [Tutorial: Get Started with Entity Framework 6 Code First using MVC 5](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)
+2. [Tutorial: Code First Approach in ASP.NET Core MVC with EF](https://medium.com/c-sharp-progarmming/tutorial-code-first-approach-in-asp-net-core-mvc-with-ef-5baf5af696e9)
+2. [Development Approaches with Entity Framework](https://www.javatpoint.com/development-approaches-with-entity-framework)
+2. [Code-First Approach With ASP.NET MVC Framework](https://www.c-sharpcorner.com/article/code-first-approach-with-asp-net-mvc-framework/)
+
 ## OPIS APLIKACJI
 
 Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne projekty aplikację dla klienta, część administracyjną oraz klasy bazodanowe.
@@ -153,6 +162,46 @@ feat: add new views (pages) to the project
 2. `PPM > na funkcję About > Add View > Razor View - Empty` i nadajemy nazwę About. W folderze `Home` pojawi się nowy plik About.cshtml
 3. Edytuj wszystkie dodane strony i utwórz ich treść wzorując się na `Index.cshtml`
 4. Edytuj `_Layout.cshtml` i w sekcji nawigacji dodaj linki do dodanych stron zgodnie z procedurą z poprzedniego commit
+
+### feat: dodaj przykladowe komponenty materializecss
+feat: add sample materializecss components
+
+1. Dodaj `Fixed Navbar` do `_Layout.cshtml` [Fixed Navbar](https://materializecss.com/navbar.html)
+2. Dodaj `Card Panel` do `About.cshtml` [Card Panel](https://materializecss.com/cards.html)
+3. Dodaj `FABs in Cards` do `Privacy.cshtml` [Card Panel](https://materializecss.com/cards.html)
+4. Dodaj `Card Reveal` do `Contact.cshtml` [Card Panel](https://materializecss.com/cards.html)
+
+
+
+## ROZWÓJ PROJEKTU Firma.Intranet
+
+Bazę danych tworzymy w oparciu o podejście Code-First. Więcej informacji w dziale [dokumentacja](#code-first).
+
+### feat: dodaj do strona.cs properties oraz annotations w projekcie Firma.Intranet
+feat: add properties and annotations to page.cs in Firma.Intranet project
+
+1. Ustaw jako aktywny projekt `Firma.Intranet`
+2. Utwórz folder `CMS` w folderze `Models`
+3. Utwórz w folderze `CMS` klasę o nazwie `Strona.cs`
+4. Dodaj do klasy `Strona.cs` properties, które będą odpowiedzialne za elementy strony
+   1. `IdStrony` - identyfikator strony w bazie danych
+   2. `LinkTytul` - anchor text linku do strony
+   3. `Tytul` - tytuł strony, może też być w treści
+   4. `Tresc` - treść strony z całym HTML
+   5. `Pozycja` - pozycja strony w menu
+5. Dodaj do każdego properties `annotations`, które odpowiadają za konfigurację bazy danych. Linki do dokumentacji w sekcji `Dokumentacja > Data Annotations`
+   1. `[Key]` - klucz główny w bazie danych
+   2. `[Required]` - oznacza, że pole jest wymagane
+      - `[Required(ErrorMessage = "Wpisz tytuł donośnika")]` - komunikat błędu, w domyślnym szablonie wyświetla się pod danym elementem w formularzu
+   3. `[MaxLength]` - maksymalna długość pola
+      - `[MaxLength(10, ErrorMessage = "Tytuł powinien zawierać max. 10 znaków")]` - weryfikuje, czy wpisany tekst nie jest dłuższy niż 10 znaków i ewentualnie wyświetla odpowiedni komunikat
+   4. `[Display]` - podczas wyświetlania zamienia nazwę properties na podany string. Nazwa properties jest taka sama jak nazwa kolumny w bazie danych i nie powinna zawierać polskich znaków. Używamy gdy nazwa pola jest inna niż wyświetlana
+      - `[Display(Name = "Tytuł odnośnika")]` - podany string zamienia nazwę properties
+   5. `[Column]` - decydujemy, że w bazie danych ten properties będzie typu nvarchar(MAX)
+
+
+
+
 
 
 

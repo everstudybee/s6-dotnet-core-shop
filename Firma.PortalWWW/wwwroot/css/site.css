@@ -13,3 +13,7 @@
     .icon-block .material-icons {
         font-size: inherit;
     }
+
+.card-panel-title {
+    margin-bottom: 20px;
+}
