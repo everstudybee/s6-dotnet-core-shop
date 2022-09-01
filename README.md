@@ -123,7 +123,7 @@ feat: integrate materializecss with Firma.PortalWWW
 3. Przeciągnij rozpakowany folder `materialize` do `Firma.PortalWWW > wwwroot > lib`
 
 ### feat: podepnij materializecss do _Layout.cshtml i uaktualnij biblioteki
-feat: connect materializcsse to   _Layout.cshtml and update libraries
+feat: connect materializcsse to _Layout.cshtml and update libraries
 
 1. Pobierz wybrany template materialize np. [Starter Template](https://materializecss.com/getting-started.html)
 2. Edytuj `Frima.PortalWWW > Shared > _Layout.cshtml` i przekopiuj odpowiednie fragmenty z `template > index.html`
@@ -137,10 +137,6 @@ feat: connect materializcsse to   _Layout.cshtml and update libraries
 3. Edytuj plik `FirmaPortalWWW > Views > Home > Index.cshtml` i dodaj odpowiednią treść strony `Home` z uwzględnieniem nowych klas CSS z materialize
 4. Usuń nieużywane przez template skrypty z `Firma.PortalWWW > wwwroot > lib`
     1. Bootstrap
-    2. jquery-validation
-    3. jquery-validation-unobtrusive
-    4. `_ValidationScriptsPartial.cshtml` z `Firma.PortalWWW > Views > Shared`
-    5. Trzeba zrestartować program, bo są wyrzucane błędy
 
 
 
