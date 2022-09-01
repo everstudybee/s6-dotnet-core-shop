@@ -31,6 +31,8 @@
 </div>
 <br>
 
+
+
 ## Documentation
 
 ### Git, versioning and tagging
@@ -62,12 +64,27 @@ Podejście do tworzenia bazy danych
 2. [Development Approaches with Entity Framework](https://www.javatpoint.com/development-approaches-with-entity-framework)
 2. [Code-First Approach With ASP.NET MVC Framework](https://www.c-sharpcorner.com/article/code-first-approach-with-asp-net-mvc-framework/)
 
+### Microsoft Dokumentacja
+
+1. [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
+2. [Entity Properties](https://docs.microsoft.com/en-us/ef/core/modeling/entity-properties?tabs=data-annotations%2Cwithout-nrt)
+2. [ASP.NET documentation](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0)
+
+### Data Annotations
+
+1. [Part 6: Using Data Annotations for Model Validation](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)
+2. [Model Validation Using Data Annotations In ASP.NET MVC](https://www.c-sharpcorner.com/article/model-validation-using-data-annotations-in-asp-net-mvc/)
+
+
+
 ## OPIS APLIKACJI
 
 Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne projekty aplikację dla klienta, część administracyjną oraz klasy bazodanowe.
 
 1. Kod z każdych zajęć oznaczony jest odpowiednimi tagami w Git
 2. Wszystkie kroki notowane są w pliku README.md
+
+
 
 <h2 class="movie">W1 - 2022-02-20</h2>
 
@@ -108,6 +125,8 @@ feat: create ASP.NET Core Web App MVC
    - `Views > Shared > _Layout.cshtml` - szablon domyślny dla wszystkich stron
    - `wwwroot > css > site.css` - główny plik styli CSS
    - `Controllers > HomeController.cs > funkcja Index()` - główny kontroler sterujący widokiem `Index.cshtml`
+
+
 
 <h2 class="movie">W2 - 2022-02-20</h2>
 
@@ -178,11 +197,11 @@ feat: add sample materializecss components
 Bazę danych tworzymy w oparciu o podejście Code-First. Więcej informacji w dziale [dokumentacja](#code-first).
 
 ### feat: dodaj do strona.cs properties oraz annotations w projekcie Firma.Intranet
-feat: add properties and annotations to page.cs in Firma.Intranet project
+feat: add properties and annotations to strona.cs in Firma.Intranet project
 
 1. Ustaw jako aktywny projekt `Firma.Intranet`
 2. Utwórz folder `CMS` w folderze `Models`
-3. Utwórz w folderze `CMS` klasę o nazwie `Strona.cs`
+3. Utwórz w folderze `CMS` klasę o nazwie `Strona.cs`. Properties tej klasy odpowiadają elementom jakie zawiera każda strona. Strona (podstrona) w tym wypadku oznacza treść i link do tej treści, który będzie umieszczony w szablonie.
 4. Dodaj do klasy `Strona.cs` properties, które będą odpowiedzialne za elementy strony
    1. `IdStrony` - identyfikator strony w bazie danych
    2. `LinkTytul` - anchor text linku do strony
@@ -198,6 +217,8 @@ feat: add properties and annotations to page.cs in Firma.Intranet project
    4. `[Display]` - podczas wyświetlania zamienia nazwę properties na podany string. Nazwa properties jest taka sama jak nazwa kolumny w bazie danych i nie powinna zawierać polskich znaków. Używamy gdy nazwa pola jest inna niż wyświetlana
       - `[Display(Name = "Tytuł odnośnika")]` - podany string zamienia nazwę properties
    5. `[Column]` - decydujemy, że w bazie danych ten properties będzie typu nvarchar(MAX)
+
+
 
 
 
