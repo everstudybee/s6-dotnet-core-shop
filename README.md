@@ -146,7 +146,13 @@ feat: add links to the menu in _Layout.cshtml
    2. `Privacy` - nazwa funkcji wyświetlającej daną stronę w kontrolerze `actionName`
    3. `Home` - nazwa kontrolera `controllerName`
 
+### feat: dodaj nowe widoki (strony) do projektu
+feat: add new views (pages) to the project
 
+1. W pliku `HomeController.cs` dodaj funkcję o nazwie takiej jak nowy widok np. About
+2. `PPM > na funkcję About > Add View > Razor View - Empty` i nadajemy nazwę About. W folderze `Home` pojawi się nowy plik About.cshtml
+3. Edytuj wszystkie dodane strony i utwórz ich treść wzorując się na `Index.cshtml`
+4. Edytuj `_Layout.cshtml` i w sekcji nawigacji dodaj linki do dodanych stron zgodnie z procedurą z poprzedniego commit
 
 
 
