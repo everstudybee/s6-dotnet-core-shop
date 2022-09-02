@@ -14,10 +14,10 @@ namespace Firma.Intranet.Data
         {
         }
 
-        public DbSet<Firma.Intranet.Models.CMS.Aktualnosc> Aktualnosc { get; set; } = default!;
+        public DbSet<Aktualnosc> Aktualnosc { get; set; } = default!;
 
-        public DbSet<Firma.Intranet.Models.CMS.Strona>? Strona { get; set; }
+        public DbSet<Strona>? Strona { get; set; }
 
-        public DbSet<Firma.Intranet.Models.CMS.Parametr>? Parametr { get; set; }
+        public DbSet<Parametr>? Parametr { get; set; }
     }
 }

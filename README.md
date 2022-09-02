@@ -33,7 +33,17 @@
 
 
 
-## Documentation
+## APPLICATION DESCRIPTION
+
+The application is a simple online store in which there are separate projects for the application for the customer, the administrative part and database classes.
+
+1. The code from each part is tagged in Git.
+2. All steps are listed in the README.md file.
+3. Each Git commit is also described in English.
+
+
+
+## Documentation of the project
 
 ### Git, versioning and tagging
 
@@ -57,14 +67,14 @@
 
 ### Code-first
 
-Podejście do tworzenia bazy danych
+One of the ways to create databases.
 
 1. [Tutorial: Get Started with Entity Framework 6 Code First using MVC 5](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)
 2. [Tutorial: Code First Approach in ASP.NET Core MVC with EF](https://medium.com/c-sharp-progarmming/tutorial-code-first-approach-in-asp-net-core-mvc-with-ef-5baf5af696e9)
 2. [Development Approaches with Entity Framework](https://www.javatpoint.com/development-approaches-with-entity-framework)
 2. [Code-First Approach With ASP.NET MVC Framework](https://www.c-sharpcorner.com/article/code-first-approach-with-asp-net-mvc-framework/)
 
-### Microsoft Dokumentacja
+### Microsoft documentation
 
 1. [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
 2. [Entity Properties](https://docs.microsoft.com/en-us/ef/core/modeling/entity-properties?tabs=data-annotations%2Cwithout-nrt)
@@ -74,15 +84,6 @@ Podejście do tworzenia bazy danych
 
 1. [Part 6: Using Data Annotations for Model Validation](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6)
 2. [Model Validation Using Data Annotations In ASP.NET MVC](https://www.c-sharpcorner.com/article/model-validation-using-data-annotations-in-asp-net-mvc/)
-
-
-
-## OPIS APLIKACJI
-
-Aplikacja jest prostym sklepem internetowym w którym rozdzielona na osobne projekty aplikację dla klienta, część administracyjną oraz klasy bazodanowe.
-
-1. Kod z każdych zajęć oznaczony jest odpowiednimi tagami w Git
-2. Wszystkie kroki notowane są w pliku README.md
 
 
 
@@ -266,14 +267,25 @@ feat: create a controller of the class Parametr.cs
 
 ### Uwagi do Kontrolerów
 
-1. Najlepiej zrobić dziedziczenie i powtarzający się kod wydzielić do klasy DatabaseController
-2. Bardzo łatwo można wydzielić funkcję Creat(), bo zwraca tylko widok 
+1. Najlepiej zrobić dziedziczenie i powtarzający się kod wydzielić do klasy DatabaseController.
+2. Bardzo łatwo można wydzielić funkcję Creat(), bo zwraca tylko widok.
+3. Podczas tworzenia kontrolera tworzy się plik `Data > FirmaIntranetContext.cs` w którym zapisywane są poszczególne DbSet. Jest to klasa do zarządzania bazą danych.
+4. Plik `Firma.Intranet > appsettings.json` zawiera nazwę bazy danych i konfigurację serwera.
 
 ### Uwagi do Widoków
 
 1. W internecie jest wiele gotowych przykładów Low Code z gotowymi tabelami i kontrolkami.
-2. Przykład zapytania "razor table template demo"
+2. Przykład zapytania "razor table template demo".
 
+### feat: dodaj linki do nowych stron do pliku _Layout.cshtml
+feat: add links to new pages to the _Layout.cshtml file
+
+1. `Views > Shared > _Layout.cshtml` - zmieniamy sekcję nawigacyjną strony by dodać linki do utworzonych wcześniej widoków.
+2. Została zastosowana druga metoda tworzenia linków:
+   1. Skopiuj jeden z już istniejących linków
+   2. `asp-controller` - nazwa kontrolera
+   3. `asp-action` - nazwa funkcji w kontrolerze, która uruchamia dany widok
+3 . Dokonaj kompilacji.
 
 
 
