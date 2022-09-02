@@ -11,16 +11,16 @@ namespace Firma.Intranet.Models.CMS
         [Required(ErrorMessage = "Wpisz tytuł odnośnika")]
         [MaxLength(10, ErrorMessage = "Tytuł powinien zawierać max. 10 znaków")]
         [Display(Name = "Tytuł odnośnika")]
-        public string LinkTytul { get; set; }
+        public string? LinkTytul { get; set; }
 
         [Required(ErrorMessage = "Wpisz tytuł strony")]
         [MaxLength(30, ErrorMessage = "Tytuł strony powinien zawierać max. 30 znaków")]
         [Display(Name = "Tytuł strony")]
-        public string Tytul { get; set; }
+        public string? Tytul { get; set; }
 
         [Display(Name = "Treść")]
         [Column(TypeName = "nvarchar(MAX)")]
-        public string Tresc { get; set; }
+        public string? Tresc { get; set; }
 
         [Required(ErrorMessage = "Pozycja jest wymagana")]
         [Display(Name = "Pozycja wyświetlania")]

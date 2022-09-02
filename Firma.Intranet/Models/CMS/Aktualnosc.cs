@@ -11,16 +11,16 @@ namespace Firma.Intranet.Models.CMS
         [Required(ErrorMessage = "Wpisz tytuł odnośnika do aktualności")]
         [MaxLength(10, ErrorMessage = "Tytuł powinien zawierać max 10 znaków")]
         [Display(Name = "Tytuł odnośnika aktualności")]
-        public string LinkTytul { get; set; }
+        public string? LinkTytul { get; set; }
 
         [Required(ErrorMessage = "Wpisz tytuł aktualności")]
         [MaxLength(30, ErrorMessage = "Tytuł aktualności powinien zawierać max 30 znaków")]
         [Display(Name = "Tytuł aktualności")]
-        public string Tytul { get; set; }
+        public string? Tytul { get; set; }
 
         [Display(Name = "Treść aktualności")]
         [Column(TypeName = "nvarchar(MAX)")]
-        public string Tresc { get; set; }
+        public string? Tresc { get; set; }
 
         [Display(Name = "Pozycja wyświetlania aktualności")]
         [Required(ErrorMessage = "Pozycja jest wymagana")]

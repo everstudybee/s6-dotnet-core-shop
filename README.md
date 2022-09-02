@@ -287,6 +287,19 @@ feat: add links to new pages to the _Layout.cshtml file
    3. `asp-action` - nazwa funkcji w kontrolerze, która uruchamia dany widok
 3 . Dokonaj kompilacji.
 
+### feat: wykonaj w konsoli NuGet polecenie Add-Migration InitialCreate
+feat: execute the command Add-Migration InitialCreate in the NuGet console
+
+1. `Data > FirmaIntranetContext.cs` - główna klasa odpowiedzialna za zarządzanie bazą danych, każdy nowy Model jest tu dopisywany i tworzony jest z niego nowy DbSet
+2. `appsettings.json` - został utworzony wpis, który definiuje bazę danych, ale w tym momencie baza jeszcze nie jest utworzona
+3. `Tools > NuGet Package Manager > Package Manager Console` - wejdź do konsoli
+4. Ustaw odpowiedni projekt w konsoli
+5. `Add-Migration InitialCreate` - podajemy to polecenie w konsoli dla wybranego projektu
+6. Został utworzony folder `Migration` a w nim pliki migracyjny
+
+
+
+
 
 
 
