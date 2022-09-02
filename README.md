@@ -318,7 +318,25 @@ feat: create a database for the Firma.Intranet project
 12. Przegląd logów LocalDB/SQLEXPRESS
     1. `Management > SQL Server Logs` - przegląd bazy danych
 
+### Uwagi do całej solucji
 
+1. Każdy tekst na stronie będzie sterowany z Intranetu.
+2. Baza danych ma być obsługiwana z oddzielnego projektu, tak aby wszystkie inne projekty z solucji korzystały z tego samego projektu bazy danych
+3. Wzorcowe tabele są prezentowane na W3 - 01:50:37
+
+
+
+<h2 class="movie">W4 - 2022-03-06</h2>
+
+## WYDZIEL BAZĘ DANYCH DO ODDZIELNEGO POJEKTU Firma.Data
+
+### feat: utworz nowy projekt dla wspolnej bazy danych
+feat: create a new project for a common database
+
+1. `PPM na Solucji > Add > New project` - do solucji dodaj nowy projekt `Class Library`
+   - wyszukaj odpowiedni template projektu
+   - Projekt złożony tylko z klas bazy danych
+2. Od wersji .NET 5 zniknął dopisek Core z nazwy [.NET Wiki](https://en.wikipedia.org/wiki/.NET)
 
 
 
