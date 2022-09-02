@@ -297,6 +297,27 @@ feat: execute the command Add-Migration InitialCreate in the NuGet console
 5. `Add-Migration InitialCreate` - podajemy to polecenie w konsoli dla wybranego projektu
 6. Został utworzony folder `Migration` a w nim pliki migracyjny
 
+### feat: utworz baze danych dla projektu Firma.Intranet
+feat: create a database for the Firma.Intranet project
+
+1. `Tools > NuGet Package Manager > Package Manager Console` - wejdź do konsoli
+2. Ustaw odpowiedni projekt w konsoli
+3. Nie trzeba uruchamiać Servera SQL
+4. `Update-Database -verbose` - tworzymy bazę danych, -verbose powoduje, że w konsoli wyświetla się cały SQL przesyłany do bazy
+5. `View > SQL Server Object Explorer` - można zobaczyć wszystkie lokalne bazy danych
+6. W pliku `appsettings.json` możemy podejrzeć nazwę naszej bazy danych
+7. `PPM > Wybrana tabela > View Data` - można podejrzeć dane tak jak w SSMS
+8. Do lokalnej bazy danych można się też dostać za pomocą SSMS, ale nie przerabialiśmy tego
+9. Można też eksportować bazę danych z `SQL Server Object Explorer (SSOE)` do `SQL Server Management Studio (SSMS)`
+10. `C:\Users\<użytkownik>\<baza>.mdf` - (SQL Server Database Primary Data File) plik do lokalnej bazy danych. Plik `<baza>.ldf` (SQL Server Database Transaction Log File) zawiera logi bazy danych i nie trzeba go eksportować.
+11. Podłączenie SSMS do lokalnej bazy danych
+    1. `Serwer type > Database Engine` - wybór rodzaju bazy danych
+    2. `Server name > (localdb)\MSSQLLocalDB` - wybór lokalnej bazy danych
+       - `'C:\Program Files\Microsoft SQL Server\130\Tools\Bin\SqlLocalDB.exe' info mssqllocaldb` - uruchomienie tej komendy z terminala wyświetli info o lokalnej bazie danych. `Instance pipe name: np:\\.\pipe\LOCALDB#25058595\tsql\query` `np:\\` można alternatywnie podać w `Server name`
+    3. `Connect` - podłączenie się do lokalnej bazy danych
+12. Przegląd logów LocalDB/SQLEXPRESS
+    1. `Management > SQL Server Logs` - przegląd bazy danych
+
 
 
 
