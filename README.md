@@ -71,14 +71,15 @@ One of the ways to create databases.
 
 1. [Tutorial: Get Started with Entity Framework 6 Code First using MVC 5](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)
 2. [Tutorial: Code First Approach in ASP.NET Core MVC with EF](https://medium.com/c-sharp-progarmming/tutorial-code-first-approach-in-asp-net-core-mvc-with-ef-5baf5af696e9)
-2. [Development Approaches with Entity Framework](https://www.javatpoint.com/development-approaches-with-entity-framework)
-2. [Code-First Approach With ASP.NET MVC Framework](https://www.c-sharpcorner.com/article/code-first-approach-with-asp-net-mvc-framework/)
+3. [Tutorial: Code First Migrations](https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/)
+4. [Development Approaches with Entity Framework](https://www.javatpoint.com/development-approaches-with-entity-framework)
+5. [Code-First Approach With ASP.NET MVC Framework](https://www.c-sharpcorner.com/article/code-first-approach-with-asp-net-mvc-framework/)
 
 ### Microsoft documentation
 
 1. [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
 2. [Entity Properties](https://docs.microsoft.com/en-us/ef/core/modeling/entity-properties?tabs=data-annotations%2Cwithout-nrt)
-2. [ASP.NET documentation](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0)
+3. [ASP.NET documentation](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0)
 
 ### Data Annotations
 
@@ -236,7 +237,7 @@ feat: add classes Aktualnosc.cs and Parametr.cs
 feat: create a controller of the class Aktualnosc.cs
 
 1.`PPM > Controllers > Add > Controller > MVC Controller with views, using Entity Framework`
-   1. `Model class` - `Aktualnosc (Frima.Intranet.Model.CMS)`
+   1. `Model class` - `Aktualnosc (Firma.Intranet.Model.CMS)`
    2. `Data context class` - dodajemy plusem i `New data context type` - `Firma.Intranet.Data.FirmaIntranetContext` - tworzy się automatycznie
    3. `Views` - wszystko zostawione domyślnie, czyli pola wyboru 3x zaznaczone i pusty input pod spodem
    4. `Controller name` - `AktualnoscController` bez "s", ale nazwa dowolna. "s" dodawane jest automatycznie by podkreślić liczbę mnogą w angielskim.

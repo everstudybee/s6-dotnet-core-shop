@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Firma.Data.Data;
+﻿using Firma.Data.Data;
 using Firma.Data.Data.CMS;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Firma.Intranet.Controllers
@@ -22,22 +17,22 @@ namespace Firma.Intranet.Controllers
         // GET: Strona
         public async Task<IActionResult> Index()
         {
-              return _context.Strona != null ? 
-                          View(await _context.Strona.ToListAsync()) :
-                          Problem("Entity set 'FirmaIntranetContext.Strona'  is null.");
+            return _context.Strona != null ?
+                        View(await _context.Strona.ToListAsync()) :
+                        Problem("Entity set 'FirmaIntranetContext.Strona'  is null.");
         }
 
         // GET: Strona/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Strona == null)
+            if(id == null || _context.Strona == null)
             {
                 return NotFound();
             }
 
             var strona = await _context.Strona
                 .FirstOrDefaultAsync(m => m.IdStrony == id);
-            if (strona == null)
+            if(strona == null)
             {
                 return NotFound();
             }
@@ -58,7 +53,7 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdStrony,LinkTytul,Tytul,Tresc,Pozycja")] Strona strona)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 _context.Add(strona);
                 await _context.SaveChangesAsync();
@@ -70,13 +65,13 @@ namespace Firma.Intranet.Controllers
         // GET: Strona/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Strona == null)
+            if(id == null || _context.Strona == null)
             {
                 return NotFound();
             }
 
             var strona = await _context.Strona.FindAsync(id);
-            if (strona == null)
+            if(strona == null)
             {
                 return NotFound();
             }
@@ -90,21 +85,21 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdStrony,LinkTytul,Tytul,Tresc,Pozycja")] Strona strona)
         {
-            if (id != strona.IdStrony)
+            if(id != strona.IdStrony)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(strona);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch(DbUpdateConcurrencyException)
                 {
-                    if (!StronaExists(strona.IdStrony))
+                    if(!StronaExists(strona.IdStrony))
                     {
                         return NotFound();
                     }
@@ -121,14 +116,14 @@ namespace Firma.Intranet.Controllers
         // GET: Strona/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Strona == null)
+            if(id == null || _context.Strona == null)
             {
                 return NotFound();
             }
 
             var strona = await _context.Strona
                 .FirstOrDefaultAsync(m => m.IdStrony == id);
-            if (strona == null)
+            if(strona == null)
             {
                 return NotFound();
             }
@@ -141,23 +136,23 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Strona == null)
+            if(_context.Strona == null)
             {
                 return Problem("Entity set 'FirmaIntranetContext.Strona'  is null.");
             }
             var strona = await _context.Strona.FindAsync(id);
-            if (strona != null)
+            if(strona != null)
             {
                 _context.Strona.Remove(strona);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool StronaExists(int id)
         {
-          return (_context.Strona?.Any(e => e.IdStrony == id)).GetValueOrDefault();
+            return (_context.Strona?.Any(e => e.IdStrony == id)).GetValueOrDefault();
         }
     }
 }

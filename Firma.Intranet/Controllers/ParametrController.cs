@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Firma.Data.Data;
+﻿using Firma.Data.Data;
 using Firma.Data.Data.CMS;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Firma.Intranet.Controllers
@@ -22,22 +17,22 @@ namespace Firma.Intranet.Controllers
         // GET: Parametr
         public async Task<IActionResult> Index()
         {
-              return _context.Parametr != null ? 
-                          View(await _context.Parametr.ToListAsync()) :
-                          Problem("Entity set 'FirmaIntranetContext.Parametr'  is null.");
+            return _context.Parametr != null ?
+                        View(await _context.Parametr.ToListAsync()) :
+                        Problem("Entity set 'FirmaIntranetContext.Parametr'  is null.");
         }
 
         // GET: Parametr/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Parametr == null)
+            if(id == null || _context.Parametr == null)
             {
                 return NotFound();
             }
 
             var parametr = await _context.Parametr
                 .FirstOrDefaultAsync(m => m.IdParametru == id);
-            if (parametr == null)
+            if(parametr == null)
             {
                 return NotFound();
             }
@@ -58,7 +53,7 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdParametru,Kod,Nazwa,Wartosc,Opis")] Parametr parametr)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 _context.Add(parametr);
                 await _context.SaveChangesAsync();
@@ -70,13 +65,13 @@ namespace Firma.Intranet.Controllers
         // GET: Parametr/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Parametr == null)
+            if(id == null || _context.Parametr == null)
             {
                 return NotFound();
             }
 
             var parametr = await _context.Parametr.FindAsync(id);
-            if (parametr == null)
+            if(parametr == null)
             {
                 return NotFound();
             }
@@ -90,21 +85,21 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdParametru,Kod,Nazwa,Wartosc,Opis")] Parametr parametr)
         {
-            if (id != parametr.IdParametru)
+            if(id != parametr.IdParametru)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(parametr);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch(DbUpdateConcurrencyException)
                 {
-                    if (!ParametrExists(parametr.IdParametru))
+                    if(!ParametrExists(parametr.IdParametru))
                     {
                         return NotFound();
                     }
@@ -121,14 +116,14 @@ namespace Firma.Intranet.Controllers
         // GET: Parametr/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Parametr == null)
+            if(id == null || _context.Parametr == null)
             {
                 return NotFound();
             }
 
             var parametr = await _context.Parametr
                 .FirstOrDefaultAsync(m => m.IdParametru == id);
-            if (parametr == null)
+            if(parametr == null)
             {
                 return NotFound();
             }
@@ -141,23 +136,23 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Parametr == null)
+            if(_context.Parametr == null)
             {
                 return Problem("Entity set 'FirmaIntranetContext.Parametr'  is null.");
             }
             var parametr = await _context.Parametr.FindAsync(id);
-            if (parametr != null)
+            if(parametr != null)
             {
                 _context.Parametr.Remove(parametr);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ParametrExists(int id)
         {
-          return (_context.Parametr?.Any(e => e.IdParametru == id)).GetValueOrDefault();
+            return (_context.Parametr?.Any(e => e.IdParametru == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Firma.Data.Data;
+﻿using Firma.Data.Data;
 using Firma.Data.Data.CMS;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Firma.Intranet.Controllers
 {
@@ -24,23 +19,23 @@ namespace Firma.Intranet.Controllers
         // Pobiera dane z bazy do listy
         public async Task<IActionResult> Index()
         {
-              return _context.Aktualnosc != null ? 
-                          View(await _context.Aktualnosc.ToListAsync()) :
-                          Problem("Entity set 'FirmaIntranetContext.Aktualnosc'  is null.");
+            return _context.Aktualnosc != null ?
+                        View(await _context.Aktualnosc.ToListAsync()) :
+                        Problem("Entity set 'FirmaIntranetContext.Aktualnosc'  is null.");
         }
 
         // GET: Aktualnosc/Details/5
         // Wyszukuje wiadomości o podanym id
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Aktualnosc == null)
+            if(id == null || _context.Aktualnosc == null)
             {
                 return NotFound();
             }
 
             var aktualnosc = await _context.Aktualnosc
                 .FirstOrDefaultAsync(m => m.IdAktualnosci == id);
-            if (aktualnosc == null)
+            if(aktualnosc == null)
             {
                 return NotFound();
             }
@@ -62,7 +57,7 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdAktualnosci,LinkTytul,Tytul,Tresc,Pozycja")] Aktualnosc aktualnosc)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 _context.Add(aktualnosc);
                 await _context.SaveChangesAsync();
@@ -74,13 +69,13 @@ namespace Firma.Intranet.Controllers
         // GET: Aktualnosc/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Aktualnosc == null)
+            if(id == null || _context.Aktualnosc == null)
             {
                 return NotFound();
             }
 
             var aktualnosc = await _context.Aktualnosc.FindAsync(id);
-            if (aktualnosc == null)
+            if(aktualnosc == null)
             {
                 return NotFound();
             }
@@ -94,21 +89,21 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdAktualnosci,LinkTytul,Tytul,Tresc,Pozycja")] Aktualnosc aktualnosc)
         {
-            if (id != aktualnosc.IdAktualnosci)
+            if(id != aktualnosc.IdAktualnosci)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(aktualnosc);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch(DbUpdateConcurrencyException)
                 {
-                    if (!AktualnoscExists(aktualnosc.IdAktualnosci))
+                    if(!AktualnoscExists(aktualnosc.IdAktualnosci))
                     {
                         return NotFound();
                     }
@@ -125,14 +120,14 @@ namespace Firma.Intranet.Controllers
         // GET: Aktualnosc/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Aktualnosc == null)
+            if(id == null || _context.Aktualnosc == null)
             {
                 return NotFound();
             }
 
             var aktualnosc = await _context.Aktualnosc
                 .FirstOrDefaultAsync(m => m.IdAktualnosci == id);
-            if (aktualnosc == null)
+            if(aktualnosc == null)
             {
                 return NotFound();
             }
@@ -145,23 +140,23 @@ namespace Firma.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Aktualnosc == null)
+            if(_context.Aktualnosc == null)
             {
                 return Problem("Entity set 'FirmaIntranetContext.Aktualnosc'  is null.");
             }
             var aktualnosc = await _context.Aktualnosc.FindAsync(id);
-            if (aktualnosc != null)
+            if(aktualnosc != null)
             {
                 _context.Aktualnosc.Remove(aktualnosc);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AktualnoscExists(int id)
         {
-          return (_context.Aktualnosc?.Any(e => e.IdAktualnosci == id)).GetValueOrDefault();
+            return (_context.Aktualnosc?.Any(e => e.IdAktualnosci == id)).GetValueOrDefault();
         }
     }
 }
