@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Firma.Intranet.Models.CMS;
 
-namespace Firma.Intranet.Data
+namespace Firma.Data.Data
 {
-    public class FirmaIntranetContext : DbContext
+    internal class FirmaContext
     {
-        public FirmaIntranetContext (DbContextOptions<FirmaIntranetContext> options)
+        public FirmaIntranetContext(DbContextOptions<FirmaIntranetContext> options)
             : base(options)
         {
         }

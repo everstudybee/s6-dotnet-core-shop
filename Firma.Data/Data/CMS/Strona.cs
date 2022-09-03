@@ -1,10 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
-namespace Firma.Intranet.Models.CMS
+namespace Firma.Data.Data.CMS
 {
-    public class Strona
-    { 
+    internal class Strona
+    {
         [Key]
         public int IdStrony { get; set; }
 
