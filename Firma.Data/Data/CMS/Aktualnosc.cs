@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace Firma.Data.Data.CMS
 {
-    internal class Aktualnosc
+    public class Aktualnosc
     {
         [Key]
         public int IdAktualnosci { get; set; }

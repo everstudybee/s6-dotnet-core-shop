@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace Firma.Data.Data.CMS
 {
-    internal class Strona
+    public class Strona
     {
         [Key]
         public int IdStrony { get; set; }

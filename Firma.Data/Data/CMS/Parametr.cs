@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Firma.Data.Data.CMS
 {
-    internal class Parametr
+    public class Parametr
     {
         [Key]
         public int IdParametru { get; set; }
