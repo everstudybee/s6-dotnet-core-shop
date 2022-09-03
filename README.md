@@ -351,7 +351,7 @@ refactor: extract database into a separate project - stage 1
 2. `PPM na Firma.Data > Add > New Folder > Data` - w projekcie bazy danych dodaj nowy folder
 3. Z projektu `Firma.Data` wykasować domyślnie utworzoną klasę
 4. `PPM na Data > Add > New Folder > CMS` - dodać kolejny podfolder
-5. `PPM na CMS > Add > Class` - dodajemy trzy klasy o nazwach takich samych jak w `Firma.Intranet > Models > CMS`. Treść tych klas ma być taka sama.
+5. `PPM na CMS > Add > Class` - dodajemy trzy klasy o nazwach takich samych jak w `Firma.Intranet > Models > CMS`. Treść tych klas ma być taka sama. Zmieniamy widoczność klas z `internal` na `public`.
 6. `PPM na Data > Add > New Class > FirmaContext.cs` - dodać klasę, która będzie zawierała to samo co `Firma.Intranet > Data > FirmaIntranetContext.cs`
 7. W projekcie `Firma.Intranet` wykasuj foldery `Data`, `Migrations`, `Models > CMS` z ich zawartością
 
@@ -374,6 +374,32 @@ refactor: extract database into a separate project - stage 3
     2. `SSMS > Dodaj nową bazę` ustaw nazwę na taką samą jak w `Firma.Intranet`
     3. Zrób backup dotychczasowej bazy danych
     4. Plik z backupem poprzedniej bazy odtwórz w nowej bazie. Konfiguracja znajduje się pod linkiem [How can I clone an SQL Server database](https://stackoverflow.com/a/26265624)
+
+
+
+## UTWÓRZ PARTIAL VIEWS
+
+### feat: dodaj klasy Rodzaj.cs i Towar.cs do Firma.Data
+feat: add the classes Rodzaj.cs and Towar.cs to Firma.Data
+
+1. `Firma.Data > Data` dodaj folder `Sklep`
+2. `Sklep` dodaj klasy `Rodzaj.cs` i `Towar.cs`
+3. W nowych klasach zmieniamy `internal` na `public`
+4. Dodaj odpowiednie properties do nowych klas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
