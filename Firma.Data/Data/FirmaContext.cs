@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Firma.Data.Data
 {
-    internal class FirmaContext
+    internal class FirmaContext : DbContext
     {
         public FirmaIntranetContext(DbContextOptions<FirmaIntranetContext> options)
             : base(options)

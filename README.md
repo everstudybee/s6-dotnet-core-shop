@@ -360,15 +360,7 @@ refactor: extract database into a separate project - stage 2
 1. w `FrimaContext.cs` dodaj dziedziczenie po DbContext i następnie `PPM na DbContext > Quick Actions and Refactorings > Install package 'MicrosoftEntityFrameworkCore' > Install with package manager > wybrać Latest stable 6.0.2`
 2. Zrobić `Rebuild` projektu `Firma.Data`
 3. `Firma.Intranet > Dependencies > Add Project Reference > Solution > Firma.Data` - dodajemy do projektu `Firma.Intranet` zależność do projektu `Firma.Data`
-4. Rekompilujemy cały projekt i po kolei klikamy wszystkie błędy i dodajemy odpowiednie `using` oraz zmieniamy nazwy klas na zgodne z `Firma.Data`
-5. Wejdź do wszystkich widoków w projekcie `Firma.Intranet` i zmień nagłówek `@model` na zgodny z projektem `Firma.Data`
-6. `Firma.Intranet > Program.cs > linia 8 > GetConnectionString` zmieniamy na `FirmaContext` 
-7. `Firma.Intranet > appsettings.json > linia 10` należy zmienić `"FirmaIntranetContext"` na `"FirmaContext"`
-8. Zmiana nazwy bazy danych
-    1. `Firma.Intranet > appsettings.json > linia 10` zmień nazwę bazy danych na docelową
-    2. `SSMS > Dodaj nową bazę` ustaw nazwę na taką samą jak w `Firma.Intranet`
-    3. Zrób backup dotychczasowej bazy danych
-    4. Plik z backupem poprzedniej bazy odtwórz w nowej bazie, [How can I clone an SQL Server database](https://stackoverflow.com/a/26265624)
+
 
 
 
