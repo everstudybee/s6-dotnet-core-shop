@@ -399,6 +399,12 @@ feat: add the foreign key from Rodzaj.cs to Towar.cs
 3. Właściwe nazwanie pól powoduje, że nie trzeba dodawać dodatkowej funkcji w pliku `FirmaContext.cs`, o nazwie OnModelCreating(), która jest opisana w linku poniżej
 4. [Dokumentacja: Klucz obcy](https://docs.microsoft.com/pl-pl/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key#foreign-key)
 
+### feat: dodaj DbSet do FirmaContext.cs dla Rodzaj.cs i Towar.cs
+feat: add Dbset to FirmaContext.cs for Rodzaj.cs and Towar.cs
+
+1. Dodaj wpis DbSet do `FirmaContext.cs` dla klasy `Rodzaj.cs` i `Towar.cs`
+2. `Rebuild` cały projekt.
+
 
  
 
