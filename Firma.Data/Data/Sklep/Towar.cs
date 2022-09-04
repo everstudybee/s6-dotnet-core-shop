@@ -25,7 +25,8 @@ namespace Firma.Data.Data.Sklep
 
         public string? Opis { get; set; }
 
-        public int IdRodzaju { get; set; }
-        public Rodzaj? Rodzaj { get; set; }
+        //Towar może mieć jeden Rodzaj
+        public int IdRodzaju { get; set; } //Ta sama nazwa co nazwa property IdRodzaju w klasie Rodzaj
+        public Rodzaj? Rodzaj { get; set; } //Nazwa property taka sama jak nazwa klasy Rodzaj
     }
 }

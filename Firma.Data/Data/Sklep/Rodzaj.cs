@@ -11,6 +11,8 @@ namespace Firma.Data.Data.Sklep
         public string? Nazwa { get; set; }
 
         public string? Opis { get; set; }
-        public List<Towar>? Towar { get; set; }
+
+        //Lista Towarów po stronie jeden (Rodzaj może mieć wiele Towarów)
+        public List<Towar>? Towar { get; set; } //Nazwa property taka sama jak nazwa klasy Towar
     }
 }

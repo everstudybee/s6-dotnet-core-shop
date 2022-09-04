@@ -1,10 +1,6 @@
 ﻿using Firma.Data.Data.CMS;
+using Firma.Data.Data.Sklep;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Firma.Data.Data
 {
@@ -15,10 +11,14 @@ namespace Firma.Data.Data
         {
         }
 
+        //Dotyczy klas z folderu CMS
         public DbSet<Aktualnosc> Aktualnosc { get; set; } = default!;
-
         public DbSet<Strona>? Strona { get; set; }
-
         public DbSet<Parametr>? Parametr { get; set; }
+
+
+        //Dotyczy klas z folderu Sklep
+        public DbSet<Rodzaj> Rodzaj { get; set; }
+        public DbSet<Towar> Towar { get; set; }
     }
 }

@@ -389,8 +389,18 @@ feat: add the classes Rodzaj.cs and Towar.cs to Firma.Data
 
 
 
+<h2 class="movie">L1 - 2022-03-20</h2>
+
+### feat: dodaj klucz obcy z Rodzaj.cs do Towar.cs 
+feat: add the foreign key from Rodzaj.cs to Towar.cs 
+
+1. Edytuj plik `Rodzaj.cs` i zrealizuj relację jeden do wielu. Lista Towarów po stronie jeden (Towar może mieć jeden rodzaj)
+2. Edytuj plik `Towar.cs` i zrealizuj relację wiele do jednego. Jedna kategoria może być przypisana do wielu Towarów.
+3. Właściwe nazwanie pól powoduje, że nie trzeba dodawać dodatkowej funkcji w pliku `FirmaContext.cs`, o nazwie OnModelCreating(), która jest opisana w linku poniżej
+4. [Dokumentacja: Klucz obcy](https://docs.microsoft.com/pl-pl/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key#foreign-key)
 
 
+ 
 
 
 
