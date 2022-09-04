@@ -400,12 +400,25 @@ feat: add the foreign key from Rodzaj.cs to Towar.cs
 4. [Dokumentacja: Klucz obcy](https://docs.microsoft.com/pl-pl/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key#foreign-key)
 
 ### feat: dodaj DbSet do FirmaContext.cs dla Rodzaj.cs i Towar.cs
-feat: add Dbset to FirmaContext.cs for Rodzaj.cs and Towar.cs
+feat: add DbSet to FirmaContext.cs for Rodzaj.cs and Towar.cs
 
 1. Dodaj wpis DbSet do `FirmaContext.cs` dla klasy `Rodzaj.cs` i `Towar.cs`
 2. `Rebuild` cały projekt.
 
+### feat: migruj baze danych wspolna dla Firma.Intranet i Firma.PortalWWW
+feat: migrate a database shared by Firma.Intranet and Firma.PortalWWW
 
+1. Działaj na projekcie Firma.Data
+2. `Firma.Data > Rebuild`
+3. `Firma.Data > Dependencies > NuGet`
+4. Zainstaluj `Microsoft.EntityFrameworkCore.Relational` w takiej samej wersji jak `Microsoft.EntityFrameworkCore`
+5. Zainstaluj `Microsoft.EntityFrameworkCore.SqlServer` w takiej samej wersji jak `Microsoft.EntityFrameworkCore`
+6. Jako aktywny projekt wybieramy `Firma.Intranet > Set as Startup Project` bo tam jest skonfigurowany `ConnectionStrings` do bazy danych
+7. Migrację robimy z projektu `Firma.Data` i wybieramy `Packege Manager Console (PMC) > Firma.Data`
+8. `Add-Migration InitialCreate` utworzenie migracji z nazwą `InitialCreate`
+   1. [Docs: Add-Migration](https://docs.microsoft.com/en-us/ef/core/cli/powershell#add-migration) 
+9. `Update-database` tworzy bazę danych
+   1. [Docs: Update-Database](https://docs.microsoft.com/en-us/ef/core/cli/powershell#update-database)
  
 
 
