@@ -2,6 +2,7 @@
 using Firma.PortalWWW.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace Firma.PortalWWW.Controllers
 {
@@ -14,7 +15,7 @@ namespace Firma.PortalWWW.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
             ViewBag.ModelStrony =
                 (
@@ -22,29 +23,31 @@ namespace Firma.PortalWWW.Controllers
                     orderby strona.Pozycja
                     select strona
                 ).ToList();
-
             ViewBag.ModelAktualnosci =
                 (
                     from aktualnosc in _context.Aktualnosc
                     orderby aktualnosc.Pozycja
                     select aktualnosc
                 ).ToList();
-            return View();
-        }
 
-        public IActionResult About()
-        {
-            return View();
-        }
+            //jeśli id == null to wyszukuje stronę Home i przekazuje jej ID do wywołania
+            if(id == null)
+            {
+                if(_context.Strona is not null)
+                {
+                    foreach(var item in _context.Strona)
+                    {
+                        if(item.Tytul == "Home")
+                            id = item.IdStrony;
+                    }
+                }
+            }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+            var pageId = _context.Strona?.Find(id);
 
-        public IActionResult Contact()
-        {
-            return View();
+            //przekazuję stronę o danym ID do Widoku
+            //mogę też do widoku przekazać obiekt z wieloma danymi 
+            return View(pageId);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

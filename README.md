@@ -488,6 +488,19 @@ feat: modify Partial View Aktualnosci.cshtml to retrieve data from the database
 3. W pliku `Index.cshtml` który wyświetla ten PartialView, dodaj wpis `@await Html.PartialAsync("Aktualnosci",(IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelAktualnosci)` co umożliwi stronie pobranie danych z kontrolera.
 4. Do funkcji `Index()` w `HomeController.cs` dodaj inicjalizację `ViewBag.ModelAktualnosci`
 
+### feat: pobieraj tresc kazdej podstrony z bazy danych
+feat: retrieve the content of each subpage from the database
+
+1. Zmodyfikuj metodę `Index()` w pliku `HomeController.cs` tak aby do widoku wysyłała stronę podpiętą pod dany link.
+2. Do obiektu który przekazuję do widoku mogę podpiąć dowolną ilość danych jako kolejne properties.
+3. Przenieść treść stron do bazy danych.
+4. Aby wyświetlać HTML z bazy należy dodać wpis `@Html.Raw(Model.Tresc)`.
+5. Przekopiować treść `About.cshtml`, `Privacy.cshtml`, `Contact.html` do bazy danych i usunąć pliki.
+6. Usuną z kontrolera funkcje wywołujące następujące widoki `About`, `Privacy`, `Contact`.
+7. Aby móc edytować HTML z poziomu `Firma.Intranet` dodać [HTML Editor Control](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs)
+8. **TODO:** Aktualności wyświetlają się na każdej podstronie, ponieważ wszystkie linki obsługiwane są przez jeden kontroler `HomeController.cshtml`. Dla każdego nowego rodzaju strony trzeba stworzyć nowy kontroler.
+
+
 
 
 

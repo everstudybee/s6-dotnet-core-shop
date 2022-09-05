@@ -1,18 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Firma.Data.Data.CMS.Strona
+@{
+    ViewData["Title"] = Model.Tytul;
 }
 
 <!-- Top banner -->
 <div class="container">
     <br>
     <br>
-    <h1 class="header center orange-text">Lorem Ipsum</h1>
-    <div class="row center">
-        <h5 class="header col s12 light">Aliquam aliquam ultricies turpis eu auctor. Nulla vitae leo a lacus ultricies cursus non sed mauris. Morbi dictum tincidunt neque.</h5>
-    </div>
-    <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-    </div>
+    <h1 class="header center orange-text">@Model.Tytul</h1>
+    @*renderowanie HTML ze stringa*@
+    @Html.Raw(Model.Tresc)
     <br>
     <br>
 </div>
@@ -20,4 +17,10 @@
 <!-- Content -->
 <div class="container">
     @await Html.PartialAsync("Aktualnosci",(IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelAktualnosci)
+</div>
+
+<div class="container">
+    <div class="section">
+        <p>Data i godzina edycji: @DateTime.Now.ToString()</p>
+    </div>
 </div>
