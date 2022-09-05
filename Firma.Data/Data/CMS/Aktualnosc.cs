@@ -24,6 +24,11 @@ namespace Firma.Data.Data.CMS
         [Display(Name = "Tytuł aktualności")]
         public string? Tytul { get; set; }
 
+        [Required(ErrorMessage = "Wpisz nazwę ikony z materializecss")]
+        [MaxLength(30, ErrorMessage = "Nazwa ikony powinna zawierać max 30 znaków")]
+        [Display(Name = "Nazwa ikony")]
+        public string? Icon { get; set; }
+
         [Display(Name = "Treść aktualności")]
         [Column(TypeName = "nvarchar(MAX)")]
         public string? Tresc { get; set; }

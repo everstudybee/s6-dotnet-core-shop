@@ -471,6 +471,14 @@ feat: add PartialView Aktualnosci.cs without retrieve data from the database
 4. Z `Index.cshtml` wyciąć fragment odpowiedzialny za generowanie Aktualnosci i wkleić go do `Aktualnosci.cshtml`
 5. Dodać `Aktualnosci.cshtml` do Index.cshtml jako `PartialView`
 
+### feat: przenies tresc PartialView do bazy danych
+feat: transfer the contents of Partial View to the database
+
+1. Dodaj do `Firma.Data.Data.CMS > Aktualnosc.cs` pole do przechowywania informacji o ikonie.
+2. `Package Manager Console > Add-Migration NazwaMigracji` - utwórz nową migrację ze zmianami bazy danych. W `PMC` ma być wybrane `Firma.Data` aktywny projekt w solucji to `Firma.Intranet`
+3. `PMC > Update-database` - update bazę danych.
+4. Dodaj w plikach `AktualnoscController.cs > Create() i Edit()`, `Views > Aktulnosc > wszystkie pliki` informację o nowym polu.
+4. Skopiuj nazwę ikony, tytuł i treść z `Aktualnosci.cshtml` do bazy danych i ustaw pozostałe parametry.
 
 
 
