@@ -139,11 +139,11 @@ feat: prepare a new solution with projects
 
 1. Dodaj do projektu `Blank Solution` - solucja to zbiór projektów
 2. Dodaj nowy projekt `ASP.NET Core Web App (Model-VIew-Controller)` - nazwa `Firma.PortalWWW`
-   1. Projekt ten jest aplikacją internetową dedykowaną klientom
+   - Projekt ten jest aplikacją internetową dedykowaną klientom
 3. Dodaj nowy projekt `ASP.NET Core Web App (Model-VIew-Controller)` - nazwa `Firma.Intranet`
-   1. Projekt ten jest aplikacją internetową dedykowaną pracownikom
+   - Projekt ten jest aplikacją internetową dedykowaną pracownikom
 4. `PPM na Firma.Intranet > Set as Startup Project` - ustaw `Firma.Intranet` jako projekt startowy
-   1. Nazwa aktywnego projektu będzie pogrubiona w Solution Explorer
+   - Nazwa aktywnego projektu będzie pogrubiona w Solution Explorer
 
 ### feat: zintegruj materializecss z Firma.PortalWWW
 feat: integrate materializecss with Firma.PortalWWW
@@ -157,24 +157,24 @@ feat: connect materializcsse to _Layout.cshtml and update libraries
 
 1. Pobierz wybrany template materialize np. [Starter Template](https://materializecss.com/getting-started.html)
 2. Edytuj `Frima.PortalWWW > Shared > _Layout.cshtml` i przekopiuj odpowiednie fragmenty z `template > index.html`
-   1. `head` integruj style css potrzebne do działania template. Zweryfikować dodatkowe pliki z dedykowanym CSS
+   - `head` integruj style css potrzebne do działania template. Zweryfikować dodatkowe pliki z dedykowanym CSS
       1. Dodaj dodatkowy kod CSS do `Firma.PortalWWW > wwwroot > lib > css > site.css`
-   2. `body` integruj zawartość template strony
-   3. `script` integruj odpowiednie skrypty potrzebne do działania template
+   - `body` integruj zawartość template strony
+   - `script` integruj odpowiednie skrypty potrzebne do działania template
         1. Dodaj odpowiednią wersję jQuery do `Firma.PortalWWW > wwwroot > lib > jquery > dist`
         2. Dodaj dodatkowy kod JavaScript do `Firma.PortalWWW > wwwroot > lib > js > site.js`
-   4. W pliku `_Layout.cshtml` w miejscu w którym ma się wklejać renderowana treść strony dodaj linijkę `@RenderBody()`
+   - W pliku `_Layout.cshtml` w miejscu w którym ma się wklejać renderowana treść strony dodaj linijkę `@RenderBody()`
 3. Edytuj plik `FirmaPortalWWW > Views > Home > Index.cshtml` i dodaj odpowiednią treść strony `Home` z uwzględnieniem nowych klas CSS z materialize
 4. Usuń nieużywane przez template skrypty z `Firma.PortalWWW > wwwroot > lib`
-    1. Bootstrap
+    - Bootstrap
 
 ### feat: dodaj linki do menu w _Layout.cshtml
 feat: add links to the menu in _Layout.cshtml
 
 1. Tworzenie linku do strony `@Html.ActionLink("Prywatność","Privacy","Home")`
-   1. `Prywatność` - anchor text `linkText`
-   2. `Privacy` - nazwa funkcji wyświetlającej daną stronę w kontrolerze `actionName`
-   3. `Home` - nazwa kontrolera `controllerName`
+   - `Prywatność` - anchor text `linkText`
+   - `Privacy` - nazwa funkcji wyświetlającej daną stronę w kontrolerze `actionName`
+   - `Home` - nazwa kontrolera `controllerName`
 
 ### feat: dodaj nowe widoki (strony) do projektu
 feat: add new views (pages) to the project
@@ -205,20 +205,20 @@ feat: add properties and annotations to strona.cs in Firma.Intranet project
 2. Utwórz folder `CMS` w folderze `Models`
 3. Utwórz w folderze `CMS` klasę o nazwie `Strona.cs`. Properties tej klasy odpowiadają elementom jakie zawiera każda strona. Strona (podstrona) w tym wypadku oznacza treść i link do tej treści, który będzie umieszczony w szablonie.
 4. Dodaj do klasy `Strona.cs` properties, które będą odpowiedzialne za elementy strony
-   1. `IdStrony` - identyfikator strony w bazie danych
-   2. `LinkTytul` - anchor text linku do strony
-   3. `Tytul` - tytuł strony, może też być w treści
-   4. `Tresc` - treść strony z całym HTML
-   5. `Pozycja` - pozycja strony w menu
+   - `IdStrony` - identyfikator strony w bazie danych
+   - `LinkTytul` - anchor text linku do strony
+   - `Tytul` - tytuł strony, może też być w treści
+   - `Tresc` - treść strony z całym HTML
+   - `Pozycja` - pozycja strony w menu
 5. Dodaj do każdego properties `annotations`, które odpowiadają za konfigurację bazy danych. Linki do dokumentacji w sekcji `Dokumentacja > Data Annotations`
-   1. `[Key]` - klucz główny w bazie danych
-   2. `[Required]` - oznacza, że pole jest wymagane
+   - `[Key]` - klucz główny w bazie danych
+   - `[Required]` - oznacza, że pole jest wymagane
       - `[Required(ErrorMessage = "Wpisz tytuł donośnika")]` - komunikat błędu, w domyślnym szablonie wyświetla się pod danym elementem w formularzu
-   3. `[MaxLength]` - maksymalna długość pola
+   - `[MaxLength]` - maksymalna długość pola
       - `[MaxLength(10, ErrorMessage = "Tytuł powinien zawierać max. 10 znaków")]` - weryfikuje, czy wpisany tekst nie jest dłuższy niż 10 znaków i ewentualnie wyświetla odpowiedni komunikat. **To pole jest ważne w menu, by tekst zawsze się mieścił lub w tytułach**
-   4. `[Display]` - podczas wyświetlania zamienia nazwę properties na podany string. Nazwa properties jest taka sama jak nazwa kolumny w bazie danych i nie powinna zawierać polskich znaków. Używamy gdy nazwa pola jest inna niż wyświetlana
+   - `[Display]` - podczas wyświetlania zamienia nazwę properties na podany string. Nazwa properties jest taka sama jak nazwa kolumny w bazie danych i nie powinna zawierać polskich znaków. Używamy gdy nazwa pola jest inna niż wyświetlana
       - `[Display(Name = "Tytuł odnośnika")]` - podany string zamienia nazwę properties
-   5. `[Column]` - decydujemy, że w bazie danych ten properties będzie typu nvarchar(MAX)
+   - `[Column]` - decydujemy, że w bazie danych ten properties będzie typu nvarchar(MAX)
 
 
 
@@ -237,10 +237,10 @@ feat: add classes Aktualnosc.cs and Parametr.cs
 feat: create a controller of the class Aktualnosc.cs
 
 1.`PPM > Controllers > Add > Controller > MVC Controller with views, using Entity Framework`
-   1. `Model class` - `Aktualnosc (Firma.Intranet.Model.CMS)`
-   2. `Data context class` - dodajemy plusem i `New data context type` - `Firma.Intranet.Data.FirmaIntranetContext` - tworzy się automatycznie
-   3. `Views` - wszystko zostawione domyślnie, czyli pola wyboru 3x zaznaczone i pusty input pod spodem
-   4. `Controller name` - `AktualnoscController` bez "s", ale nazwa dowolna. "s" dodawane jest automatycznie by podkreślić liczbę mnogą w angielskim.
+   - `Model class` - `Aktualnosc (Firma.Intranet.Model.CMS)`
+   - `Data context class` - dodajemy plusem i `New data context type` - `Firma.Intranet.Data.FirmaIntranetContext` - tworzy się automatycznie
+   - `Views` - wszystko zostawione domyślnie, czyli pola wyboru 3x zaznaczone i pusty input pod spodem
+   - `Controller name` - `AktualnoscController` bez "s", ale nazwa dowolna. "s" dodawane jest automatycznie by podkreślić liczbę mnogą w angielskim.
 2. `Views > Aktualnosc` - Widoki należy robić dedykowane i zmienić kod wygenerowany automatycznie
 3. Zalecane jest w AktualnoscController.cs zrobić dziedziczenie tak jak było na Desktopach i aby dziedziczyły po DatabaseController
 
@@ -248,10 +248,10 @@ feat: create a controller of the class Aktualnosc.cs
 feat: create a controller of the class Strona.cs
 
 1. `PPM > Controllers > Add > Controller > MVC Controller with views, using Entity Framework`
-   1. `Model class` - `Aktualnosc (Frima.Intranet.Model.CMS)`
-   2. `Data context class` - jeśli dodaliśmy już wcześniej context `Frma.Intranet.Data.FirmaIntranetContext` to nie dodajemy po raz drugi, ponieważ utworzyło by się drugie połączenie do bazy
-   3. `Views` - wszystko zostawione domyślnie, czyli pola wyboru 3x zaznaczone i pusty input pod spodem
-   4. `Controller name` - `AktualnoscController` bez "s", ale nazwa dowolna. "s" dodawane jest automatycznie by podkreślić liczbę mnogą w angielskim.
+   - `Model class` - `Aktualnosc (Frima.Intranet.Model.CMS)`
+   - `Data context class` - jeśli dodaliśmy już wcześniej context `Frma.Intranet.Data.FirmaIntranetContext` to nie dodajemy po raz drugi, ponieważ utworzyło by się drugie połączenie do bazy
+   - `Views` - wszystko zostawione domyślnie, czyli pola wyboru 3x zaznaczone i pusty input pod spodem
+   - `Controller name` - `AktualnoscController` bez "s", ale nazwa dowolna. "s" dodawane jest automatycznie by podkreślić liczbę mnogą w angielskim.
 2. `Views > Nazwa kontrolera` - Widoki należy robić dedykowane i zmienić kod wygenerowany automatycznie
 3. Zalecane jest w NazwaKontroleraController.cs zrobić dziedziczenie tak jak było na Desktopach i aby dziedziczyły po DatabaseController
 
@@ -259,10 +259,10 @@ feat: create a controller of the class Strona.cs
 feat: create a controller of the class Parametr.cs
 
 1. `PPM > Controllers > Add > Controller > MVC Controller with views, using Entity Framework`
-   1. `Model class` - `Aktualnosc (Frima.Intranet.Model.CMS)`
-   2. `Data context class` - jeśli dodaliśmy już wcześniej context `Frma.Intranet.Data.FirmaIntranetContext` to nie dodajemy po raz drugi, ponieważ utworzyło by się drugie połączenie do bazy
-   3. `Views` - wszystko zostawione domyślnie, czyli pola wyboru 3x zaznaczone i pusty input pod spodem
-   4. `Controller name` - `AktualnoscController` bez "s", ale nazwa dowolna. "s" dodawane jest automatycznie by podkreślić liczbę mnogą w angielskim.
+   - `Model class` - `Aktualnosc (Frima.Intranet.Model.CMS)`
+   - `Data context class` - jeśli dodaliśmy już wcześniej context `Frma.Intranet.Data.FirmaIntranetContext` to nie dodajemy po raz drugi, ponieważ utworzyło by się drugie połączenie do bazy
+   - `Views` - wszystko zostawione domyślnie, czyli pola wyboru 3x zaznaczone i pusty input pod spodem
+   - `Controller name` - `AktualnoscController` bez "s", ale nazwa dowolna. "s" dodawane jest automatycznie by podkreślić liczbę mnogą w angielskim.
 2. `Views > Nazwa kontrolera` - Widoki należy robić dedykowane i zmienić kod wygenerowany automatycznie
 3. Zalecane jest w NazwaKontroleraController.cs zrobić dziedziczenie tak jak było na Desktopach i aby dziedziczyły po DateBasebontroller
 
@@ -283,9 +283,9 @@ feat: add links to new pages to the _Layout.cshtml file
 
 1. `Views > Shared > _Layout.cshtml` - zmieniamy sekcję nawigacyjną strony by dodać linki do utworzonych wcześniej widoków.
 2. Została zastosowana druga metoda tworzenia linków:
-   1. Skopiuj jeden z już istniejących linków
-   2. `asp-controller` - nazwa kontrolera
-   3. `asp-action` - nazwa funkcji w kontrolerze, która uruchamia dany widok
+   - Skopiuj jeden z już istniejących linków
+   - `asp-controller` - nazwa kontrolera
+   - `asp-action` - nazwa funkcji w kontrolerze, która uruchamia dany widok
 3 . Dokonaj kompilacji.
 
 ### feat: wykonaj w konsoli NuGet polecenie Add-Migration InitialCreate
@@ -312,12 +312,12 @@ feat: create a database for the Firma.Intranet project
 9. Można też eksportować bazę danych z `SQL Server Object Explorer (SSOE)` do `SQL Server Management Studio (SSMS)`
 10. `C:\Users\<użytkownik>\<baza>.mdf` - (SQL Server Database Primary Data File) plik do lokalnej bazy danych. Plik `<baza>.ldf` (SQL Server Database Transaction Log File) zawiera logi bazy danych i nie trzeba go eksportować.
 11. Podłączenie SSMS do lokalnej bazy danych
-    1. `Serwer type > Database Engine` - wybór rodzaju bazy danych
-    2. `Server name > (localdb)\MSSQLLocalDB` - wybór lokalnej bazy danych
+    - `Serwer type > Database Engine` - wybór rodzaju bazy danych
+    - `Server name > (localdb)\MSSQLLocalDB` - wybór lokalnej bazy danych
        - `'C:\Program Files\Microsoft SQL Server\130\Tools\Bin\SqlLocalDB.exe' info mssqllocaldb` - uruchomienie tej komendy z terminala wyświetli info o lokalnej bazie danych. `Instance pipe name: np:\\.\pipe\LOCALDB#25058595\tsql\query` `np:\\` można alternatywnie podać w `Server name`
-    3. `Connect` - podłączenie się do lokalnej bazy danych
+    - `Connect` - podłączenie się do lokalnej bazy danych
 12. Przegląd logów LocalDB/SQLEXPRESS
-    1. `Management > SQL Server Logs` - przegląd bazy danych
+    - `Management > SQL Server Logs` - przegląd bazy danych
 
 ### Uwagi do całej solucji
 
@@ -370,10 +370,10 @@ refactor: extract database into a separate project - stage 3
 6. `Firma.Intranet > Program.cs > linia 8 > GetConnectionString` zmieniamy na `FirmaContext` 
 7. `Firma.Intranet > appsettings.json > linia 10` należy zmienić `"FirmaIntranetContext"` na `"FirmaContext"`
 8. Zmiana nazwy bazy danych
-    1. `Firma.Intranet > appsettings.json > linia 10` zmień nazwę bazy danych na docelową
-    2. `SSMS > Dodaj nową bazę` ustaw nazwę na taką samą jak w `Firma.Intranet`
-    3. Zrób backup dotychczasowej bazy danych
-    4. Plik z backupem poprzedniej bazy odtwórz w nowej bazie. Konfiguracja znajduje się pod linkiem [How can I clone an SQL Server database](https://stackoverflow.com/a/26265624)
+    - `Firma.Intranet > appsettings.json > linia 10` zmień nazwę bazy danych na docelową
+    - `SSMS > Dodaj nową bazę` ustaw nazwę na taką samą jak w `Firma.Intranet`
+    - Zrób backup dotychczasowej bazy danych
+    - Plik z backupem poprzedniej bazy odtwórz w nowej bazie. Konfiguracja znajduje się pod linkiem [How can I clone an SQL Server database](https://stackoverflow.com/a/26265624)
 
 
 
@@ -414,9 +414,9 @@ feat: migrate a database shared by Firma.Intranet and Firma.PortalWWW
 6. Jako aktywny projekt wybieramy `Firma.Intranet > Set as Startup Project` bo tam jest skonfigurowany `ConnectionStrings` do bazy danych
 7. Migrację robimy z projektu `Firma.Data` i wybieramy `Packege Manager Console (PMC) > Firma.Data`
 8. `Add-Migration InitialCreate` utworzenie migracji z nazwą `InitialCreate`
-   1. [Docs: Add-Migration](https://docs.microsoft.com/en-us/ef/core/cli/powershell#add-migration) 
+   - [Docs: Add-Migration](https://docs.microsoft.com/en-us/ef/core/cli/powershell#add-migration) 
 9. `Update-database` tworzy bazę danych
-   1. [Docs: Update-Database](https://docs.microsoft.com/en-us/ef/core/cli/powershell#update-database)
+   - [Docs: Update-Database](https://docs.microsoft.com/en-us/ef/core/cli/powershell#update-database)
 
 
 
@@ -434,18 +434,29 @@ feat: set Frima.PortalWWW content management from Firma.Intranet
 feat: add PartialView Odnosniki
 
 1. Zamień odnośniki w menu na `PartialView` i pobieraj je z bazy danych tabela `Strona`.
-   1. [Docs: Partial Views](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial?view=aspnetcore-6.0)
-   2. [Tutorial: Create and Render Partial Views](https://www.tutorialsteacher.com/mvc/partial-view-in-asp.net-mvc)
+   - [Docs: Partial Views](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial?view=aspnetcore-6.0)
+   - [Tutorial: Create and Render Partial Views](https://www.tutorialsteacher.com/mvc/partial-view-in-asp.net-mvc)
 2. Działaj na projekcie `Firma.PortalWWW`
 2. `PartialView` to część widoku, który może być osadzony w innym widoku
 3. `Views > Shared > Add > View > Razor View`  
-    1. View name: Odnosniki
-    2. Template: Empty (without model)
-    3. Create as a partial view
-    4. Reszta baz zmian
+    - View name: Odnosniki
+    - Template: Empty (without model)
+    - Create as a partial view
+    - Reszta baz zmian
 4. Z `_Layout.cshtml` wyciąć fragment odpowiedzialny za generowanie menu i wkleić go do `Odnosniki.cshtml`
 
+### feat: skonfiguruj Odnosniki.cshtml do pobierania danych z bazy danych
+feat: configure Odnosniki.cshtml to retrieve data from the database
 
+1. Jeżeli Widok używa kolekcji z bazy danych to dodaj wpis`@model IEnumerable<Firma.Data.Data.CMS.Strona>`. To połączy Widok z odpowiednią bazą danych.
+2. W zmiennej `Model` znajduje się kolekcja stron i dzięki temu możemy za pomocą `foreach` wydobyć nazwy linków.
+3. Dodaj do sekcji Menu w `_Layout.cshtml` wywołanie PartialView `@await Html.PartialAsync("Odnosniki",(IEnumerable<Firma.Data.Data.CMS.Strona>)ViewBag.ModelStrony)`
+4. `ViewBack` lub `ViewData` to "listonosz", który przenosi dane pomiędzy kontrolerem a widokiem.
+5. Nazwa po `ViewBag.` może być dowolna, ale musi być taka sama w Kontrolerze i Widoku pobierającym te dane.
+4. `ViewBag.ModelStrony` oczekuje na dane do widoku od `HomeController.cs`. Należy w tym pliku dokonać następujących modyfikacji:
+    - Dodaj property `_context`
+    - Zainicjalizuj `_context` w konstruktorze
+    - Do funkcji `Index()` dodaj inicjalizację `ViewBag.ModelStrony`
 
 
 

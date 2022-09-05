@@ -1,20 +1,27 @@
-﻿<div class="nav-wrapper container">
+﻿@model IEnumerable<Firma.Data.Data.CMS.Strona>
+<div class="nav-wrapper container">
     <a id="logo-container" href="#" class="brand-logo">Logo</a>
 
     <!-- Menu -->
     <ul class="right hide-on-med-and-down">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Privacy", "Privacy", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        @foreach (var item in Model)
+        {
+            @*<li>@Html.ActionLink(item.LinkTytul, "Index", "Home", new { id = item.IdStrony }, null)</li>*@
+            @*wersję poniżej łatwiej stylować*@
+            <li><a class="nav-link text-dark" asp-controller="Home" asp-action="Index" asp-route-id="@item.IdStrony">@item.LinkTytul</a></li>
+        }
     </ul>
 
     <!-- Mobile menu -->
     <ul id="nav-mobile" class="sidenav">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Privacy", "Privacy", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        @foreach(var item in Model)
+        {
+            @*<li>@Html.ActionLink(item.LinkTytul, "Index", "Home", new { id = item.IdStrony }, null)</li>*@
+            @*wersję poniżej łatwiej stylować*@
+            <li><a class="nav-link text-dark" asp-controller="Home" asp-action="Index" asp-route-id="@item.IdStrony">@item.LinkTytul</a></li>
+        }
     </ul>
 
     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
