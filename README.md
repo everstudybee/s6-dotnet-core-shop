@@ -430,8 +430,8 @@ feat: set Frima.PortalWWW content management from Firma.Intranet
 3. W `Dependencies` dodajemy połącznie do projektu `Firma.Data`.
 4. Do pliku `Program.cs` skopiować `using` i `builder.Services.AddDbContext<FirmaContext>` z `Firma.Intranet`. Jest to bindowanie bazy danych.
 
-### feat: dodaj PartialView Odnosniki
-feat: add PartialView Odnosniki
+### feat: dodaj PartialView Odnosniki.cs
+feat: add PartialView Odnosniki.cs
 
 1. Zamień odnośniki w menu na `PartialView` i pobieraj je z bazy danych tabela `Strona`.
    - [Docs: Partial Views](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial?view=aspnetcore-6.0)
@@ -458,6 +458,18 @@ feat: configure Odnosniki.cshtml to retrieve data from the database
     - Zainicjalizuj `_context` w konstruktorze
     - Do funkcji `Index()` dodaj inicjalizację `ViewBag.ModelStrony`
 
+### feat: dodaj PartialView Aktualnosci.cs bez pobierania danych z bazy
+feat: add PartialView Aktualnosci.cs without retrieve data from the database
+
+1. Działaj na projekcie `Firma.PortalWWW`
+2. `PartialView` to część widoku, który może być osadzony w innym widoku
+3. `Views > Shared > Add > View > Razor View`  
+    1. View name: Aktualnosci
+    2. Template: Empty (without model)
+    3. Create as a partial view
+    4. Reszta baz zmian
+4. Z `Index.cshtml` wyciąć fragment odpowiedzialny za generowanie Aktualnosci i wkleić go do `Aktualnosci.cshtml`
+5. Dodać `Aktualnosci.cshtml` do Index.cshtml jako `PartialView`
 
 
 
