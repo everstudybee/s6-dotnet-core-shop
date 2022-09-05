@@ -377,8 +377,6 @@ refactor: extract database into a separate project - stage 3
 
 
 
-## UTWÓRZ PARTIAL VIEWS
-
 ### feat: dodaj klasy Rodzaj.cs i Towar.cs do Firma.Data
 feat: add the classes Rodzaj.cs and Towar.cs to Firma.Data
 
@@ -419,7 +417,18 @@ feat: migrate a database shared by Firma.Intranet and Firma.PortalWWW
    1. [Docs: Add-Migration](https://docs.microsoft.com/en-us/ef/core/cli/powershell#add-migration) 
 9. `Update-database` tworzy bazę danych
    1. [Docs: Update-Database](https://docs.microsoft.com/en-us/ef/core/cli/powershell#update-database)
- 
+
+
+
+## UTWÓRZ PARTIAL VIEWS
+
+### feat: set zarzadzanie trescia Frima.PortalWWW z Firma.Intranet
+feat: set Frima.PortalWWW content management from Firma.Intranet
+
+1. Działaj na projekcie `Firma.PortalWWW`.
+2. Dodaj wpis `ConnectionStrings` do pliku `appsettings.json` definiujący z jakiej bazy będzie korzystał ten projekt. Można skopiować wpis z Firma.Intranet.
+3. W `Dependencies` dodajemy połącznie do projektu `Firma.Data`.
+4. Do pliku `Program.cs` skopiować `using` i `builder.Services.AddDbContext<FirmaContext>` z `Firma.Intranet`. Jest to bindowanie bazy danych.
 
 
 
@@ -437,6 +446,7 @@ feat: migrate a database shared by Firma.Intranet and Firma.PortalWWW
 
 
 
+... DCN
 
 
 <style>
