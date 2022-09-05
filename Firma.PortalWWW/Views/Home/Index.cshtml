@@ -16,3 +16,8 @@
     <br>
     <br>
 </div>
+
+<!-- Content -->
+<div class="container">
+    @await Html.PartialAsync("Aktualnosci",(IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelAktualnosci)
+</div>

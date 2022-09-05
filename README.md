@@ -478,7 +478,17 @@ feat: transfer the contents of Partial View to the database
 2. `Package Manager Console > Add-Migration NazwaMigracji` - utwórz nową migrację ze zmianami bazy danych. W `PMC` ma być wybrane `Firma.Data` aktywny projekt w solucji to `Firma.Intranet`
 3. `PMC > Update-database` - update bazę danych.
 4. Dodaj w plikach `AktualnoscController.cs > Create() i Edit()`, `Views > Aktulnosc > wszystkie pliki` informację o nowym polu.
-4. Skopiuj nazwę ikony, tytuł i treść z `Aktualnosci.cshtml` do bazy danych i ustaw pozostałe parametry.
+5. Skopiuj nazwę ikony, tytuł i treść z `Aktualnosci.cshtml` do bazy danych i ustaw pozostałe parametry.
+
+### feat: zmodyfikuj PartialView Aktualnosci.cshtml aby pobierał dane z bazy
+feat: modify Partial View Aktualnosci.cshtml to retrieve data from the database
+
+1. W pliku `Aktualnosci.cshtml` dodaj `@model IEnumerable<Firma.Data.Data.CMS.Aktualnosc>` aby PartialView mógł iterować po Liście, która zawiera Aktualności
+2. W pliku `Aktualnosci.cshtml` dodaj pętlę `foreach` aby wypisać Aktualności
+3. W pliku `Index.cshtml` który wyświetla ten PartialView, dodaj wpis `@await Html.PartialAsync("Aktualnosci",(IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelAktualnosci)` co umożliwi stronie pobranie danych z kontrolera.
+4. Do funkcji `Index()` w `HomeController.cs` dodaj inicjalizację `ViewBag.ModelAktualnosci`
+
+
 
 
 
