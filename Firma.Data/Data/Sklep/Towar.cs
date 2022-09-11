@@ -28,5 +28,8 @@ namespace Firma.Data.Data.Sklep
         //Towar może mieć jeden Rodzaj
         public int IdRodzaju { get; set; } //Ta sama nazwa co nazwa property IdRodzaju w klasie Rodzaj
         public Rodzaj? Rodzaj { get; set; } //Nazwa property taka sama jak nazwa klasy Rodzaj
+
+        [Display(Name = "Towar promowany")]
+        public bool Promocja { get; set; }
     }
 }

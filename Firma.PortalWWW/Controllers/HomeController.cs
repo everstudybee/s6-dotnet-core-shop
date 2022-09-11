@@ -2,7 +2,6 @@
 using Firma.PortalWWW.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Xml.Linq;
 
 namespace Firma.PortalWWW.Controllers
 {

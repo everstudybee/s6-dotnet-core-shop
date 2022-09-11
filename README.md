@@ -580,6 +580,15 @@ feat: replace PartialView in _SklepLayout.cshtml with Component
 
 
 
+## ROZBUDOWA PROJEKTU Z MODYFIKACJĄ BAZY DANYCH
+
+### feat: dodaj property o nazwie Promocja do Towar.cs
+feat: add a property named Promocja to Towar.cs
+
+1. Dodaj property o nazwie Promocja do `Firma.Data > Data > Sklep > Towar.cs`.
+2. Doinstaluj `Microsoft.EntityFrameworkCore.Design`
+3. Stwórz Migration `Add-Migration AddPromocjaToTowar`
+4. Uaktualnij bazę danych `Update-Database`
 
 
 
