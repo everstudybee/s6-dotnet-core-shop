@@ -561,6 +561,23 @@ feat: display item details
  
 
 
+<h2 class="movie">L2 - 2022-04-24</h2>
+
+## COMPONENTS - TECHNOLOGIA ALTERNATYWNA DLA PARTIALVIEW
+
+### feat: zamien PartialView w _SklepLayout.cshtml na Component
+feat: replace PartialView in _SklepLayout.cshtml with Component
+
+1. Dokumentacja components
+   - https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-6.0
+2. Dodajemy nową klasę `Controllers > RodzajeManuComponent.cs`, ta klasa wystawi dane dla komponentu
+3. Dodajemy nowy folder do `Views > Sklep` o nazwie `Components`
+4. Dodajemy nowy folder do `Views > Sklep > Components` o nazwie `RodzajeMenuComponent`
+5. Dadajemy nowy View w `Views > Sklep > Components > RodzajeMenuComponent > PPM > Razor View - Empty` o nazwie `RodzajeMenuComponent.cshtml`
+6. Kod tworzymy na podstawie `Views > Shared > RodzajeMenu.cshtml`
+7. Edytuj `Views > Shared > _SklepLayout.cshtml` i zamień fragment wyświetlający menu za pomocą PartialView na wyświetlający za pomocą Component
+8. Usuń View `Views > Shared > RodzajeMenu.cshtml`.
+
 
 
 
