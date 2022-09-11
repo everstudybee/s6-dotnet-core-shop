@@ -619,6 +619,14 @@ feat: add cart functionality to the store
 4. `Add-Migration CreateTableElementKoszyka` - utwórz migrację aktualizującą bazę danych o nową tabelę `ElementKoszyka`
 5. `Update-Database` - utwórz nową tabelę
 
+### feat: utwórz klase KoszykB.cs
+feat: create a KoszykB.cs class
+
+1. Wszystkie zmiany odbywają sie w projekcie `Firma.PortallWWW`
+2. Dodaj folder `BusinessLogic` do `Models`
+3. Dodaj klasę `KoszykB` do `Modlels > BusinessLogic`
+4. Napisz wszystkie metody klasy `KoszykB.cs`
+
 
 
 <h2 class="movie">L4 - 2022-05-29</h2>
