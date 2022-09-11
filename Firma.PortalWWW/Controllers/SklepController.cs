@@ -12,7 +12,7 @@ namespace Firma.PortalWWW.Controllers
             _context = context;
         }
 
-        //funkcja wyświetla wszystkie produkty, id to id kategorii
+        //funkcja wyświetla wszystkie produkty, id to id Rodzaju
         public async Task<IActionResult> Index(int? id)
         {
             if(_context.Rodzaj is not null)
@@ -32,6 +32,22 @@ namespace Firma.PortalWWW.Controllers
             }
 
             return View();
+        }
+
+        //wyswietla szczegóły klikniętego Towaru
+        public async Task<IActionResult> Szczegoly(int id)
+        {
+            if(_context.Rodzaj is not null)
+            {
+                ViewBag.ModelRodzaje = await _context.Rodzaj.ToListAsync();
+            }
+
+            if(_context.Towar is not null)
+            {
+                return View(await _context.Towar.Where(t => t.IdTowaru == id).FirstOrDefaultAsync());
+            }
+
+            return View("Brak szczegółów towaru");
         }
     }
 }

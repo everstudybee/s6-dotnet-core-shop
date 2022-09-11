@@ -546,7 +546,18 @@ feat: display products related to a Rodzaj
 2. Dodajemy `Towary` do bazy danych
 2. `Chrome > F12 > Zakładka Lighthouse` audyt strony
 
+### feat: wyswietl szczegoly towaru
+feat: display item details
 
+1. Działaj na projekcie `Firma.PortalWWW`
+2. Edytuj `SklepController.cs` i dodaj funckję szczegóły, która wystawi dane widokowi
+3. `SklepController.cs > Szczegoly() > PPM > Add View > Razor View` tworzy widok do kontrolera.
+   - `View name`: Szczegoly
+   - `Template`: Empty
+   - `Create as a partial view` nie zaznaczone
+   - `Use a layout page` zaznaczone i wybrane`Views > Shared > _SklepLayout.cshtml`
+4. Dodaj `@model Firma.Data.Data.Sklep.Towar`
+5. Dodaj w pliku `Views > Sklep > Index.cshtml` link do Szczegółów Towaru.
  
 
 
@@ -568,12 +579,64 @@ feat: display products related to a Rodzaj
 
 
 
+---
+---
+---
 
 
+## Elementy projektu
 
+### Wymagania na podstawie zadań w CloudA
 
+1. Wykonać layout Portalu WWW - nowoczesny,bardzo profesjonalny.
+2. Dodatkowo minimum 3 strony zgodne z tym layoutem.
+3. Wykonać layout Intranetu - nowoczesny
+4. Dodatkowo minimum 3 strony zgodne z tym layoutem.
+5. Minimum 3 klasy bazodanowe bez klucza obcego
+6. Utwórz bazę danych na bazie tych klas
+7. W części intranet utwórz widoki wyświetlające listę, dodające, edytujące i kasujące obiekty utworzone na bazie tych klas
+8. Dopracuj wszystkie widoki - mają być bardzo profesjonalne
+9. Podłącz utworzone widoki pod layout Firma.Intranet
+10. Wszystkie klasy obsługującej bazę danych powinny znajdować się w osobnym projekcie Firma.Data.
+11. Wszystkimi tekstami w portalu steruj z poziomu bazy danych
+12. Wyświetlanie stron
+13. Wyświetlanie odpowiednika aktualności
+14. Do projektu dodać odpowiednik sklepu internetowego z odpowiednikiem rodzajów towarów
+15. Dopracuj graficznie wszystkie widoki
+16. Do projektu dodaj odpowiednik koszyka
 
-... DCN
+### Edycja na jednej stronie z tabelą
+
+Po kliknięciu na pozycję z lewej strony od razu po prawej pojawia się możliwość edycji.
+
+![Edycja na jednej stronie](docs/edycja-na-jednej-stronie.png)
+![Info po najechaniu](docs/info-po-najechaniu.png)
+
+1. Modul filtrowania
+2. Moduł tabeli
+3. Moduł edycji z wieloma zakładkami
+4. Ładne przyciski z różnymi kolorami i brakiem aktywności
+5. Ładne inputs
+
+### Bogate filtrowanie
+
+![Bogate filtrowanie](docs/bogate-filtrowanie.png)
+
+1. Na górze strony pojawia się info o wybranych filtrach
+
+### Dziedziczenie widoków
+
+1. Mrówki generują bardzo dużo powtarzalnego kodu
+2. Najlepiej byłoby stworzyć DatabaseController, z którego mogą dziedziczyć pozostałem kontrolery i cały dublujący się kod we wszystkich kontrolerach będzie tam.
+3. Odpowiednikami  kontrolerów w desktopach są ViewModels w internetowych
+4. W internetowych jeden kontroler odpowiada za wiele widoków, każda funkcja i przycisk to inny widok
+5. Można też zastosować pewne dziedziczenia na Views, jeśli będą wspólne elementy.
+6. Można też pójść w kierunku, że jeden Views wyświetla dowolne źródło danych, czyli wszystkie widoki. Toki wspólny widok można użyć do tabel słownikowych.
+7. W widokach generowanych automatycznie można zastosować gotowe kontrolki, które będą o wiele ciekawsze niż te domyślne np. do wyświetlania list.
+
+### Wstrzykiwanie zależności
+
+1. Kolejnym ulepszeniem może być wzorzec projektowy Wstrzykiwanie Zależności (Dependency Injection), ale to ma być na mobilnych
 
 
 <style>

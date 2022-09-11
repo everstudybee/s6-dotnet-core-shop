@@ -34,7 +34,7 @@
                         @Html.DisplayFor(modelItem => item.Foto)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nazwa)
+                        @Html.ActionLink(item.Nazwa,"Szczegoly","Sklep",new {id=item.IdTowaru},null)
                     </td>
                     <td>
                         @item.Opis
