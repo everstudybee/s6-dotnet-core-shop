@@ -464,10 +464,10 @@ feat: add PartialView Aktualnosci.cs without retrieve data from the database
 1. Działaj na projekcie `Firma.PortalWWW`
 2. `PartialView` to część widoku, który może być osadzony w innym widoku
 3. `Views > Shared > Add > View > Razor View`  
-    1. View name: Aktualnosci
-    2. Template: Empty (without model)
-    3. Create as a partial view
-    4. Reszta baz zmian
+    - View name: Aktualnosci
+    - Template: Empty (without model)
+    - Create as a partial view
+    - Reszta baz zmian
 4. Z `Index.cshtml` wyciąć fragment odpowiedzialny za generowanie Aktualnosci i wkleić go do `Aktualnosci.cshtml`
 5. Dodać `Aktualnosci.cshtml` do Index.cshtml jako `PartialView`
 
@@ -502,6 +502,19 @@ feat: retrieve the content of each subpage from the database
 
 
 
+<h2 class="movie">W5 - 2022-04-03</h2>
+
+## UTWÓRZ SKLEP INTERNETOWY
+
+### feat: zbuduj layout dla sklepu internetowego 
+feat: build a layout for an online store 
+
+1. Wczęśniej dodaliśmy klasę (model) w projekcie `Firma.Data` o nazwie `Sklep > Rodzaj.cs` i updatowaliśmy bazę danych [link](#feat-dodaj-klasy-rodzajcs-i-towarcs-do-firmadata).
+2. Ustawić aktywny projekt w solucji na `Firma.PortalWWW`
+3. `Shared > Add new > Razor View empty` nazwa `_SklepLayout.cshtml` - nowy layout dla sklepu
+4. Skopiuj layout z pliku `_Layout.cshtml`
+   - `@await Html.PartialAsync("RodzajeMenu",(IEnumerable<Firma.Data.Data.Sklep.Rodzaj>)ViewBag.ModelRodzaje)` - zmieniamy wyświetlane menu na rodzaje
+   - Dostosuj nowy layout
 
 
 
