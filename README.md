@@ -606,6 +606,27 @@ feat: create a separate view for promoted goods
 
 
 
+<h2 class="movie">L3 - 2022-04-24</h2>
+
+## DODANIE KOSZYKA I ZAMÓWIENIE TOWARU
+
+### feat: dodaj funkcjonalnosc koszyka do sklepu
+feat: add cart functionality to the store
+
+1. Wszystkie zmiany odbywają się w projekcie `Firma.Data`
+2. Dodaj klasę o nazwie `ElementKoszyka.cs` do `Data > Sklep`
+3. Dodaj DbSet do `Data > FirmaContext.cs`
+4. `Add-Migration CreateTableElementKoszyka` - utwórz migrację aktualizującą bazę danych o nową tabelę `ElementKoszyka`
+5. `Update-Database` - utwórz nową tabelę
+
+
+
+<h2 class="movie">L4 - 2022-05-29</h2>
+
+
+
+<h2 class="movie">L5 - 2022-06-12</h2>
+
 
 
 

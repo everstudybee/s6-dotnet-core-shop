@@ -20,5 +20,6 @@ namespace Firma.Data.Data
         //Dotyczy klas z folderu Sklep
         public DbSet<Rodzaj>? Rodzaj { get; set; }
         public DbSet<Towar>? Towar { get; set; }
+        public DbSet<ElementKoszyka>? ElementKoszyka { get; set; }
     }
 }
