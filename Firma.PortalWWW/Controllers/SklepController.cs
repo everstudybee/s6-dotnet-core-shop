@@ -15,39 +15,21 @@ namespace Firma.PortalWWW.Controllers
         //funkcja wyświetla wszystkie produkty, id to id Rodzaju
         public async Task<IActionResult> Index(int? id)
         {
-            if(_context.Rodzaj is not null)
+            if(id == null)
             {
-                ViewBag.ModelRodzaje = await _context.Rodzaj.ToListAsync();
-
-                if(id == null)
-                {
-                    Data.Data.Sklep.Rodzaj pierwszy = await _context.Rodzaj.FirstAsync();
-                    id = pierwszy.IdRodzaju;
-                }
+                return View(await _context.Towar!.Where(t => t.Promocja).ToListAsync());
             }
-
-            if(_context.Towar is not null)
+            else
             {
-                return View(await _context.Towar.Where(t => t.IdRodzaju == id).ToListAsync());
+                return View(await _context.Towar!.Where(t => t.IdRodzaju == id).ToListAsync());
             }
-
-            return View();
         }
 
         //wyswietla szczegóły klikniętego Towaru
         public async Task<IActionResult> Szczegoly(int id)
         {
-            if(_context.Rodzaj is not null)
-            {
-                ViewBag.ModelRodzaje = await _context.Rodzaj.ToListAsync();
-            }
-
-            if(_context.Towar is not null)
-            {
-                return View(await _context.Towar.Where(t => t.IdTowaru == id).FirstOrDefaultAsync());
-            }
-
-            return View("Brak szczegółów towaru");
+            ViewBag.ModelRodzaje = await _context.Rodzaj!.ToListAsync();
+            return View(await _context.Towar!.Where(t => t.IdTowaru == id).FirstOrDefaultAsync());
         }
     }
 }

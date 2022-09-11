@@ -590,7 +590,10 @@ feat: add a property named Promocja to Towar.cs
 3. Stwórz Migration `Add-Migration AddPromocjaToTowar`
 4. Uaktualnij bazę danych `Update-Database`
 
+### feat: wyswietl promowane towary po kliknieciu na Sklep
+feat: display the promoted goods after clicking on the Sklep
 
+1. Dostosuje funkcję `Controllers > SklepController.cs > Index()` do wyświetlania promowanych towarów, gdy żadna kategoria nie jest wybrana.
 
 
 
