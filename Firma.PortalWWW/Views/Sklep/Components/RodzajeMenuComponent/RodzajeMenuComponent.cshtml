@@ -5,6 +5,7 @@
     <!-- Menu -->
     <ul class="right hide-on-med-and-down">
         <li>@Html.ActionLink("Home","Index","Home")</li>
+        <li>@Html.ActionLink("Promocje","Promocje","Sklep")</li>
         @foreach(var item in Model)
         {
             <li>@Html.ActionLink(item.Nazwa,"Index","Sklep",new {id=item.IdRodzaju},null)</li>
@@ -14,6 +15,7 @@
     <!-- Mobile menu -->
     <ul id="nav-mobile" class="sidenav">
         <li>@Html.ActionLink("Home","Index","Home")</li>
+        <li>@Html.ActionLink("Promocje","Promocje","Sklep")</li>
         @foreach(var item in Model)
         {
             <li>@Html.ActionLink(item.Nazwa,"Index","Sklep",new {id=item.IdRodzaju},null)</li>

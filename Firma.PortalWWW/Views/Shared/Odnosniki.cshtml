@@ -15,7 +15,7 @@
             @if(item.LinkTytul == "Home") continue;
             <li><a class="nav-link text-dark" asp-controller="Home" asp-action="Index" asp-route-id="@item.IdStrony">@item.LinkTytul</a></li>
         }
-        <li>@Html.ActionLink("Shop","Index","Sklep");</li>
+        <li>@Html.ActionLink("Shop","Promocje","Sklep");</li>
     </ul>
 
     <!-- Mobile menu -->
@@ -26,7 +26,7 @@
             @if(item.LinkTytul == "Home") continue;
             <li><a asp-controller="Home" asp-action="Index" asp-route-id="@item.IdStrony">@item.LinkTytul</a></li>
         }
-        <li>@Html.ActionLink("Shop","Index","Sklep");</li>
+        <li>@Html.ActionLink("Shop","Promocje","Sklep");</li>
     </ul>
 
     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>

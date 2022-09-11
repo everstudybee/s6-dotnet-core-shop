@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Firma.Data.Data.Sklep.Towar>
+@{
+    ViewData["Title"] = "Promowane towary";
+    Layout = "_SklepLayout";
+}
+
+<div class="container">
+    <h3>Promocje</h3>
+    <div class="row">
+        @foreach(var item in Model)
+        {
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="@item.Foto">
+                    </div>
+                    <div class="card-content">
+                        <a class="nav-link text-dark" asp-controller="Sklep" asp-action="Szczegoly" asp-route-id="@item.IdTowaru"><span class="card-title">@item.Nazwa</span></a>
+                        <p>@item.Opis</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

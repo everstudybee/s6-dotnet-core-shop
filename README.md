@@ -595,8 +595,14 @@ feat: display the promoted goods after clicking on the Sklep
 
 1. Dostosuje funkcję `Controllers > SklepController.cs > Index()` do wyświetlania promowanych towarów, gdy żadna kategoria nie jest wybrana.
 
+### feat: stworz oddzielny widok na promowane towary
+feat: create a separate view for promoted goods
 
-
+1. Utwórz nową metodę w `SklepController.cs` do wyświetlania promowanych towarów
+2. Klikając na metodę `Promocje()` w `SklepController.cs` dodaj widok obsługujący tę metodę.
+3. Widok `Views > Sklep > Promocje.cshtml` będzie tworzony w oparciu o `Views > Sklep > Index.cshtml` ale zamiast tabeli będą dodane karty dla towarów.
+4. W pliku `Views > Shared > Odnosniki.cshtml` zmieniamy link do sklepu, który ma teraz wyświetlać promowane towary.
+5. Dodaj karty dla promowanych towarów w `Views > Sklep > Promocje`.
 
 
 

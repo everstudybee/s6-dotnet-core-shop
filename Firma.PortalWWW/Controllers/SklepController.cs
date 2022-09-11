@@ -31,5 +31,10 @@ namespace Firma.PortalWWW.Controllers
             ViewBag.ModelRodzaje = await _context.Rodzaj!.ToListAsync();
             return View(await _context.Towar!.Where(t => t.IdTowaru == id).FirstOrDefaultAsync());
         }
+
+        public async Task<IActionResult> Promocje()
+        {
+            return View(await _context.Towar!.Where(t => t.Promocja).ToListAsync());
+        }
     }
 }
