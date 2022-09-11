@@ -526,6 +526,39 @@ feat: create a controller for an online store
 5. Do widoku przekazuję listę towarów z danej kategorii za pomocą `return View(await _context.Towar.Where(t => t.IdRodzaju == id).ToListAsync());`.
 6.  Jeśli stworzymy klasę, która będzie miała w sobie i to co ma `ViewBag` i listę towarów z kategorii to możemy utworzyć jeden obiekt z oboma danymi i przekazać go z kontrolera za pomocą tylko metody View(), nie używając `ViewBag`.
 
+### feat: utworz widok dla metody index w SklepController.cs
+feat: create a view for the Index method in Store Controller.cs
+
+1. `SklepController.cs > Index > PPM > Add View > Razor View - Empty > Index.cshtml` tworzy widok do kontrolera.
+2. Dodaj PartialView dla menu Rodzaje `Views > Shared > Add > View > Razor View`. `RodzajeMenu.cshtml` wzorowany jest na `Odnosniki.cshtml`
+    - View name: RodzajeMenu
+    - Template: Empty (without model)
+    - Create as a partial view
+    - Reszta baz zmian
+3. Dostosuj `RodzajeMenu.cshtml` aby wyświetlało menu z Rodzajami.
+4. Edytuj `Odnosniki.cshtml` i dodaj link do sklepu internetowego.
+5. Dodaj rodzaje do bazy danych.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
