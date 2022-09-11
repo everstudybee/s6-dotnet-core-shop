@@ -9,7 +9,7 @@ namespace Firma.PortalWWW.Controllers
         private readonly FirmaContext _context;
         public SklepController(FirmaContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         //funkcja wyświetla wszystkie produkty, id to id kategorii
@@ -21,7 +21,7 @@ namespace Firma.PortalWWW.Controllers
 
                 if(id == null)
                 {
-                    var pierwszy = await _context.Rodzaj.FirstAsync();
+                    Data.Data.Sklep.Rodzaj pierwszy = await _context.Rodzaj.FirstAsync();
                     id = pierwszy.IdRodzaju;
                 }
             }

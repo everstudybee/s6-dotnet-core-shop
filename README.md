@@ -539,7 +539,12 @@ feat: create a view for the Index method in Store Controller.cs
 4. Edytuj `Odnosniki.cshtml` i dodaj link do sklepu internetowego.
 5. Dodaj rodzaje do bazy danych.
 
+### feat: wyswietl produkty powiazane z Rodzaj
+feat: display products related to a Rodzaj
 
+1. `Sklep > Index.cshtml` dostosowujemy widok do wyświetlania produktów.
+2. Dodajemy `Towary` do bazy danych
+2. `Chrome > F12 > Zakładka Lighthouse` audyt strony
 
 
  

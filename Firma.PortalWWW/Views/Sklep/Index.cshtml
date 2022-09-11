@@ -8,7 +8,43 @@
     *@
     Layout = "_SklepLayout";
 }
-
-<div>
-    Displaying data from a given category
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Foto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nazwa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Opis)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cena)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Foto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nazwa)
+                    </td>
+                    <td>
+                        @item.Opis
+                    </td>
+                    <td>
+                        @* @Html.DisplayFor(modelItem => item.Cena) Formatuje automatycznie do dwóch miejsc po przecinku *@
+                        @item.Cena.ToString("0.00") @* Wymuszenie formatowania do dwóch miejsc po przecinku *@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
