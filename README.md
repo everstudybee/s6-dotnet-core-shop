@@ -516,6 +516,15 @@ feat: build a layout for an online store
    - `@await Html.PartialAsync("RodzajeMenu",(IEnumerable<Firma.Data.Data.Sklep.Rodzaj>)ViewBag.ModelRodzaje)` - zmieniamy wyświetlane menu na rodzaje
    - Dostosuj nowy layout
 
+### feat: stworz kontroler dla sklepu internetowego 
+feat: create a controller for an online store
+
+1. Stwórz `Controllers > MVC Controller - Empty > SklepController.cs` pusty kontroler i uzupełnij funkcję Index
+2. Stwórz w kontrolerze połączenie do bazy danych
+3. Do `ViewBag.ModelRodzaje` pobieramy za pomocą Linq listę kategorii by wyświetlić ją za pomocą PartialView w `_SklepLayout.cshtml`
+4. Przy pierwszym uruchomieniu nie ma wybranej kategorii, więc ustawiamy kategorię domyślną. Docelowo będą to produkty promowane
+5. Do widoku przekazuję listę towarów z danej kategorii za pomocą `return View(await _context.Towar.Where(t => t.IdRodzaju == id).ToListAsync());`.
+6.  Jeśli stworzymy klasę, która będzie miała w sobie i to co ma `ViewBag` i listę towarów z kategorii to możemy utworzyć jeden obiekt z oboma danymi i przekazać go z kontrolera za pomocą tylko metody View(), nie używając `ViewBag`.
 
 
 
