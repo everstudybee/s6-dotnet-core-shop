@@ -640,6 +640,13 @@ feat: complete the KoszykB class with additional methods
    - Napisz metodę `GetElementyKoszykaKlienta()`
    - Napisz metodę `GetRazem()`
 
+### feat: utworz klase przekazujaca dwa obiekty do widoku koszyka
+feat: create a class that passes two objects to the basket view
+
+1. `Models > Add folder > Sklep > Add Class > DaneDoKoszyka.cs` - utworzenie klasy przechowującej dwa obiekty
+2. `Controllers > Add > MVC Controller - Empty > KoszykController.cs` - controller, który ogbsługuje dane pokazywane w koszyku.
+
+
 
 
 <h2 class="movie">L5 - 2022-06-12</h2>
