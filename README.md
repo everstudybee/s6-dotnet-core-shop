@@ -646,6 +646,11 @@ feat: create a class that passes two objects to the basket view
 1. `Models > Add folder > Sklep > Add Class > DaneDoKoszyka.cs` - utworzenie klasy przechowującej dwa obiekty
 2. `Controllers > Add > MVC Controller - Empty > KoszykController.cs` - controller, który ogbsługuje dane pokazywane w koszyku.
 
+### feat: dodaj metode dodawania towaru do koszyka
+feat: add a method for adding an item to the cart
+
+1. W pliku `KoszykController.cs` dodaj metodę `DodajDoKoszyka()`
+
 
 
 

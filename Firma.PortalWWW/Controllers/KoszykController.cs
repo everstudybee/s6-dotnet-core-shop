@@ -27,5 +27,16 @@ namespace Firma.PortalWWW.Controllers
 
             return View(daneDoKoszyka);
         }
+
+        //funkcja obsługuje przycisk do dodawania towaru do koszyka
+        public async Task<IActionResult> DodajDoKoszyka(int id)
+        {
+            //obiekt klasy biznesowej tworzymy za każdym razem, zalecenie Kornatki
+            KoszykB koszykB = new KoszykB(_context, HttpContext);
+            koszykB.DodajDoKoszyka(await _context.Towar!.FindAsync(id));
+
+            //po wykonaniu tej metody wywołujemy widok "Index", czyli widok towarów w koszyku
+            return RedirectToAction("Index");
+        }
     }
 }
