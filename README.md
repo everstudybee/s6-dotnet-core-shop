@@ -626,10 +626,19 @@ feat: create a KoszykB.cs class
 2. Dodaj folder `BusinessLogic` do `Models`
 3. Dodaj klasę `KoszykB` do `Modlels > BusinessLogic`
 4. Napisz wszystkie metody klasy `KoszykB.cs`
+   - Napisz metodę `GetIdSesjiKoszyka()` 
 
 
 
 <h2 class="movie">L4 - 2022-05-29</h2>
+
+### feat: uzupelnij klase KoszykB dodatkowymi motodami
+feat: complete the KoszykB class with additional methods
+
+1. Napisz pozostałe metody klasy `KoszykB.cs`
+   - Napisz metodę `DodajDoKoszyka()`
+   - Napisz metodę `GetElementyKoszykaKlienta()`
+   - Napisz metodę `GetRazem()`
 
 
 

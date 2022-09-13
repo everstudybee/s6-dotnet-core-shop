@@ -1,5 +1,6 @@
 ﻿using Firma.Data.Data;
 using Firma.Data.Data.Sklep;
+using Microsoft.EntityFrameworkCore;
 
 namespace Firma.PortalWWW.Models.BusinessLogic
 {
@@ -58,6 +59,28 @@ namespace Firma.PortalWWW.Models.BusinessLogic
                 _context.ElementKoszyka?.Add(tempElementKoszyka); //nowy towar dodajemy do lokalnej kolecji
             }
             _context.SaveChanges(); //zapisujemy zmiany w bazie danych
+        }
+
+        //funkcja zwraca wszystkie elementy koszyka dla danego identyfikatora sesji
+        public async Task<List<ElementKoszyka>> GetElementyKoszykaKlienta()
+        {
+            //tu brakuje kodu
+            return await _context.ElementKoszyka!.Where(e => e.IdSesjiKoszyka == idSesjiKoszyka).ToListAsync();
+        }
+
+        //funkcja zwraca Sumę wartości towarów w koszyku danego klinta
+        public async Task<decimal> GetRazem()
+        {
+            //zwracamy wszystkie iloczyny (ilość razy cena towaru w danej sesji)
+            var items =
+                (
+                from element in _context.ElementKoszyka
+                where element.IdSesjiKoszyka == idSesjiKoszyka
+                select element.Towar!.Cena * (decimal?)element.Ilosc
+            );
+
+            //zwraca wartość koszyka
+            return await items.SumAsync() ?? 0;
         }
     }
 }
